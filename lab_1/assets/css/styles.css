@@ -5,4 +5,6 @@
 
 @import "layout.css";
 
+@import "components/main-menu.css";
+
 @import "header.css";
