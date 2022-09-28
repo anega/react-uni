@@ -1,3 +1,7 @@
+/* Reset */
+@import "reset.css";
+
+/* Common */
 @import "colors.css";
 @import "fonts.css";
 @import "typography.css";
@@ -5,6 +9,8 @@
 
 @import "layout.css";
 
+/* Components */
 @import "components/main-menu.css";
 
-@import "header.css";
+/* Sections */
+@import "sections/header.css";
