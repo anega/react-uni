@@ -1,8 +1,9 @@
 .btn {
-    border-radius: 50%;
+    border-radius: 40px;
     font: normal 500 18px Poppins, Arial, Helvetica, sans-serif;
     line-height: 32px;
     padding: 16px 40px;
+    text-decoration: none;
 }
 
 .btn-light {
