@@ -15,6 +15,7 @@
 /* Sections */
 @import "sections/header.css";
 @import "sections/footer.css";
+/* Homepage sections */
 @import "sections/banner-section.css";
 @import "sections/how-we-work-section.css";
 @import "sections/projects-section.css";
@@ -22,3 +23,5 @@
 @import "sections/faq-section.css";
 @import "sections/send-inquiry-section.css";
 @import "sections/blog-section.css";
+/* About us sections */
+@import "sections/about-us.css";
