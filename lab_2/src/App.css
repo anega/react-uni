@@ -1,0 +1,204 @@
+:root {
+    --main-accent: #2405F2;
+    --dark-blue: #282938;
+    --bg-grey: #F4F6FC;
+    --bg-blue: #1C1E53;
+    --action-yellow: #FCD980;
+    --accent: #EEF4FA;
+    --light-yellow: rgba(252, 217, 128, 0.1);
+}
+
+html, body {
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+}
+
+.section {
+    padding: 128px 0;
+    width: 100%;
+}
+
+.section-inner {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/fonts/poppins/Poppins-SemiBold.eot');
+    src: local('Poppins SemiBold'), local('Poppins-SemiBold'),
+    url('./assets/fonts/poppins/Poppins-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/poppins/Poppins-SemiBold.woff2') format('woff2'),
+    url('./assets/fonts/poppins/Poppins-SemiBold.woff') format('woff'),
+    url('./assets/fonts/poppins/Poppins-SemiBold.svg#Poppins-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/fonts/poppins/Poppins-Regular.eot');
+    src: local('Poppins Regular'), local('Poppins-Regular'),
+    url('./assets/fonts/poppins/Poppins-Regular.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/poppins/Poppins-Regular.woff2') format('woff2'),
+    url('./assets/fonts/poppins/Poppins-Regular.woff') format('woff'),
+    url('./assets/fonts/poppins/Poppins-Regular.svg#Poppins-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/fonts/poppins/Poppins-Thin.eot');
+    src: local('Poppins Thin'), local('Poppins-Thin'),
+    url('./assets/fonts/poppins/Poppins-Thin.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/poppins/Poppins-Thin.woff2') format('woff2'),
+    url('./assets/fonts/poppins/Poppins-Thin.woff') format('woff'),
+    url('./assets/fonts/poppins/Poppins-Thin.svg#Poppins-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/fonts/poppins/Poppins-Black.eot');
+    src: local('Poppins Black'), local('Poppins-Black'),
+    url('./assets/fonts/poppins/Poppins-Black.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/poppins/Poppins-Black.woff2') format('woff2'),
+    url('./assets/fonts/poppins/Poppins-Black.woff') format('woff'),
+    url('./assets/fonts/poppins/Poppins-Black.svg#Poppins-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/fonts/poppins/Poppins-ExtraLight.eot');
+    src: local('Poppins ExtraLight'), local('Poppins-ExtraLight'),
+    url('./assets/fonts/poppins/Poppins-ExtraLight.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/poppins/Poppins-ExtraLight.woff2') format('woff2'),
+    url('./assets/fonts/poppins/Poppins-ExtraLight.woff') format('woff'),
+    url('./assets/fonts/poppins/Poppins-ExtraLight.svg#Poppins-ExtraLight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/fonts/poppins/Poppins-Medium.eot');
+    src: local('Poppins Medium'), local('Poppins-Medium'),
+    url('./assets/fonts/poppins/Poppins-Medium.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/poppins/Poppins-Medium.woff2') format('woff2'),
+    url('./assets/fonts/poppins/Poppins-Medium.woff') format('woff'),
+    url('./assets/fonts/poppins/Poppins-Medium.svg#Poppins-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/fonts/poppins/Poppins-Bold.eot');
+    src: local('Poppins Bold'), local('Poppins-Bold'),
+    url('./assets/fonts/poppins/Poppins-Bold.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/poppins/Poppins-Bold.woff2') format('woff2'),
+    url('./assets/fonts/poppins/Poppins-Bold.woff') format('woff'),
+    url('./assets/fonts/poppins/Poppins-Bold.svg#Poppins-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/fonts/poppins/Poppins-ExtraBold.eot');
+    src: local('Poppins ExtraBold'), local('Poppins-ExtraBold'),
+    url('./assets/fonts/poppins/Poppins-ExtraBold.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/poppins/Poppins-ExtraBold.woff2') format('woff2'),
+    url('./assets/fonts/poppins/Poppins-ExtraBold.woff') format('woff'),
+    url('./assets/fonts/poppins/Poppins-ExtraBold.svg#Poppins-ExtraBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/fonts/poppins/Poppins-Light.eot');
+    src: local('Poppins Light'), local('Poppins-Light'),
+    url('./assets/fonts/poppins/Poppins-Light.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/poppins/Poppins-Light.woff2') format('woff2'),
+    url('./assets/fonts/poppins/Poppins-Light.woff') format('woff'),
+    url('./assets/fonts/poppins/Poppins-Light.svg#Poppins-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+h1, .h1 {
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 74px;
+}
+
+h2, .h2 {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 64px;
+}
+
+h3, .h3 {
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 56px;
+
+}
+
+h4, .h4 {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 56px;
+}
+
+h5, .h5 {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 48px;
+}
+
+h6, .h6 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+p, .text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.text-semi-bold {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.label {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.label-small {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+}

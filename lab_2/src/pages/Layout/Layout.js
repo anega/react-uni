@@ -1,7 +1,12 @@
 import React from 'react';
+import {Outlet} from "react-router-dom";
+import Header from "../../components/Header/Header";
 
 const Layout = () => (
-    <h1>Layout</h1>
+    <>
+        <Header />
+        {/*<Outlet/>*/}
+    </>
 );
 
 export default Layout;
