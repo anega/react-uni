@@ -1,0 +1,29 @@
+.mission-vision {
+    background: var(--accent);
+}
+
+.mission,
+.vision {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mission > div {
+    margin-bottom: 96px;
+}
+
+.mission-info {
+    margin: 40px 140px 0 0;
+}
+
+.vision-info {
+    margin: 40px 0 0 140px;
+}
+
+.mission-info h3,
+.vision-info h3,
+.mission-info p,
+.vision-info p {
+    color: var(--dark-blue);
+    margin-bottom: 16px;
+}

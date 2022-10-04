@@ -1,0 +1,28 @@
+.header {
+    background: var(--bg-blue);
+    padding: 16px 0;
+}
+
+.header .section-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.contact-btn {
+    border: 2px solid rgba(244, 246, 252, 0.2);
+    border-radius: 40px;
+    color: #fff;
+    margin-left: 32px;
+    text-decoration: none;
+}
+
+.contact-btn:hover {
+    background: rgba(244, 246, 252, 0.1);;
+    border-color: rgba(244, 246, 252, 0.4);
+}

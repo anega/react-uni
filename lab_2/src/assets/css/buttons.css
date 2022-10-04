@@ -1,0 +1,25 @@
+.btn {
+    border-radius: 40px;
+    font: normal 500 18px Poppins, Arial, Helvetica, sans-serif;
+    line-height: 32px;
+    padding: 16px 40px;
+    text-decoration: none;
+}
+
+.btn-light {
+    background: var(--action-yellow);
+    color: var(--dark-blue);
+}
+
+.btn-light:hover {
+    background: #FDE4A6;
+}
+
+.btn-dark {
+    background: var(--dark-blue);
+    color: #fff;
+}
+
+.btn-dark:hover {
+    background: #535460;
+}

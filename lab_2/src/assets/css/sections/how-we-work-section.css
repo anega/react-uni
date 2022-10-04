@@ -1,0 +1,60 @@
+.how-we-work.section {
+    padding-bottom: 80px;
+}
+
+.how-we-work {
+    background: var(--bg-grey);
+}
+
+.how-we-work .section-inner {
+    display: flex;
+}
+
+.how-we-work-info {
+    flex: 1;
+}
+
+.how-we-work h2,
+.how-we-work h5,
+.how-we-work p {
+    color: var(--dark-blue);
+}
+
+.how-we-work-info h2 {
+    margin-bottom: 16px;
+}
+
+.how-we-work-info p {
+    margin-bottom: 16px;
+    max-width: 370px;
+}
+
+.how-we-work-info .arrow-link {
+    color: var(--main-accent);
+    text-decoration: none;
+}
+
+.how-we-work-info .arrow-link:hover {
+    color: var(--bg-blue);
+}
+
+.work-strategy-list {
+    display: flex;
+    flex: 1.3;
+    flex-wrap: wrap;
+}
+
+.work-strategy-list .work-strategy-item {
+    box-sizing: border-box;
+    flex-basis: 50%;
+    margin-bottom: 48px;
+    padding-right: 40px;
+}
+
+.work-strategy-item img {
+    margin-bottom: 12px;
+}
+
+.work-strategy-item h5 {
+    margin-bottom: 4px;
+}
