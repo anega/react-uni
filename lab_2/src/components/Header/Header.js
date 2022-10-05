@@ -1,13 +1,13 @@
 import React from 'react';
 import './Header.css';
-import logo from '../../assets/images/logo.svg';
 import {NavLink} from "react-router-dom";
+import Logo from "../Logo/Logo";
 
 const Header = () => {
     return (
         <header className="section header">
             <div className="section-inner">
-                <img src={logo} alt="Fensweet logo" />
+                <Logo/>
                 <div className="menu-wrap">
                     <div className="main-menu">
                         <NavLink to="/" className="text-semi-bold active">Home</NavLink>

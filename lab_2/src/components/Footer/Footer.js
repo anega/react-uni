@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import logo from '../../assets/images/logo.svg';
+import Logo from "../Logo/Logo";
 
 const Footer = () => {
     return (
@@ -8,20 +8,20 @@ const Footer = () => {
             <div className="section upper-footer">
                 <div className="section-inner">
                     <div className="contact-wrap">
-                        <img src={logo} alt="Finsweet logo" />
-                            <p className="label-small contact-tag-line">We are always open to discuss your project and
-                                improve your
-                                online presence.</p>
-                            <ul className="contact-info">
-                                <li>
-                                    <p className="label">Email me at</p>
-                                    <p><a href="mailto:contact@website.com">contact@website.com</a></p>
-                                </li>
-                                <li>
-                                    <p className="label">Call us</p>
-                                    <p><a href="tel:0927627728525">0927 6277 28525</a></p>
-                                </li>
-                            </ul>
+                        <Logo/>
+                        <p className="label-small contact-tag-line">We are always open to discuss your project and
+                            improve your
+                            online presence.</p>
+                        <ul className="contact-info">
+                            <li>
+                                <p className="label">Email me at</p>
+                                <p><a href="mailto:contact@website.com">contact@website.com</a></p>
+                            </li>
+                            <li>
+                                <p className="label">Call us</p>
+                                <p><a href="tel:0927627728525">0927 6277 28525</a></p>
+                            </li>
+                        </ul>
                     </div>
                     <div className="social-links-section">
                         <h2>Lets Talk!</h2>
