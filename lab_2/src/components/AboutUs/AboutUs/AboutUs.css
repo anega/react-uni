@@ -1,0 +1,26 @@
+.about-us .section-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-us-text {
+    max-width: 590px;
+    width: 100%;
+}
+
+.about-us-text h1,
+.about-us-text p {
+    color: var(--dark-blue);
+}
+
+.about-us-text .label {
+    margin-bottom: 8px;
+}
+
+.about-us-text h1 {
+    margin-bottom: 30px;
+}
+
+.about-us-text h1 + p {
+    max-width: 480px;
+}

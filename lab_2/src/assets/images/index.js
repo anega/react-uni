@@ -1,4 +1,4 @@
-import AboutUs from './about-us.jpg';
+import AboutUsImg from './about-us.jpg';
 import Blog01 from './blog-01.jpg';
 import Blog02 from './blog-02.jpg';
 import Blog03 from './blog-03.jpg';
@@ -26,7 +26,7 @@ import WhoWeAre from './who-we-are.jpg';
 import WomenWriting from './woman-writing-on-paper.jpg';
 
 export {
-    AboutUs,
+    AboutUsImg,
     Blog01,
     Blog02,
     Blog03,

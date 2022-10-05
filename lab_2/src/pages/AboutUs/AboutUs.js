@@ -1,10 +1,11 @@
 import React from 'react';
+import {default as AboutUsComponent} from '../../components/AboutUs/AboutUs/AboutUs';
 
 const AboutUs = () => {
     return (
-        <div>
-            <h1>About Us</h1>
-        </div>
+        <>
+            <AboutUsComponent/>
+        </>
     );
 };
 
