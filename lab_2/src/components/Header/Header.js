@@ -2,6 +2,7 @@ import React from 'react';
 import './Header.css';
 import Logo from "../Logo/Logo";
 import MainMenu from "../MainMenu/MainMenu";
+import RoundedButtonLink from "../RoundedButtonLink/RoundedButtonLink";
 
 const Header = () => {
     return (
@@ -10,7 +11,7 @@ const Header = () => {
                 <Logo/>
                 <div className="menu-wrap">
                     <MainMenu/>
-                    <a href="/#" className="btn contact-btn text-semi-bold">Contact us</a>
+                    <RoundedButtonLink text="Contact us" link="/#" className="btn btn-outline"/>
                 </div>
             </div>
         </header>

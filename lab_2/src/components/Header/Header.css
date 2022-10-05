@@ -14,42 +14,8 @@
     align-items: center;
 }
 
-.contact-btn {
-    border: 2px solid rgba(244, 246, 252, 0.2);
-    border-radius: 40px;
-    color: #fff;
-    margin-left: 32px;
-    text-decoration: none;
-}
-
-.contact-btn:hover {
-    background: rgba(244, 246, 252, 0.1);;
-    border-color: rgba(244, 246, 252, 0.4);
-}
-
-/* TODO: move to a separate component */
-.btn {
-    border-radius: 40px;
-    font: normal 500 18px Poppins, Arial, Helvetica, sans-serif;
-    line-height: 32px;
-    padding: 16px 40px;
-    text-decoration: none;
-}
-
-.btn-light {
-    background: var(--action-yellow);
-    color: var(--dark-blue);
-}
-
-.btn-light:hover {
-    background: #FDE4A6;
-}
-
-.btn-dark {
-    background: var(--dark-blue);
-    color: #fff;
-}
-
-.btn-dark:hover {
-    background: #535460;
+.header .btn-outline {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
 }
