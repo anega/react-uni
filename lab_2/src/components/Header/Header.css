@@ -28,21 +28,6 @@
 }
 
 /* TODO: move to a separate component */
-.main-menu a {
-    display: inline-block;
-    margin: 0 16px;
-    text-decoration: none;
-}
-
-.header .main-menu a {
-    color: #BBBBCB;
-}
-
-.header .main-menu a:hover,
-.header .main-menu a.active {
-    color: #fff;
-}
-
 .btn {
     border-radius: 40px;
     font: normal 500 18px Poppins, Arial, Helvetica, sans-serif;

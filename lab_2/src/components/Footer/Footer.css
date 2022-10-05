@@ -94,15 +94,3 @@
 .lower-footer .copyright {
     color: var(--dark-blue);
 }
-
-.footer .main-menu a {
-    color: var(--dark-blue);
-}
-
-.footer .main-menu a:hover {
-    color: var(--bg-blue);
-}
-
-.footer .main-menu a:last-child {
-    margin-right: 0;
-}

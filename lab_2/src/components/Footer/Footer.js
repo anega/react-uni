@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import Logo from "../Logo/Logo";
+import MainMenu from "../MainMenu/MainMenu";
 
 const Footer = () => {
     return (
@@ -56,14 +57,7 @@ const Footer = () => {
             <div className="section lower-footer">
                 <div className="section-inner">
                     <p className="copyright text-semi-bold">Copyright 2021, Finsweet.com</p>
-                    <div className="main-menu">
-                        <a href="/#" className="text-semi-bold active">Home</a>
-                        <a href="/#" className="text-semi-bold">About us</a>
-                        <a href="/#" className="text-semi-bold">Features</a>
-                        <a href="/#" className="text-semi-bold">Pricing</a>
-                        <a href="/#" className="text-semi-bold">FAQ</a>
-                        <a href="/#" className="text-semi-bold">Blog</a>
-                    </div>
+                    <MainMenu/>
                 </div>
             </div>
         </div>

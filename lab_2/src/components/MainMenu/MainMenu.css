@@ -1,0 +1,27 @@
+.main-menu a {
+    display: inline-block;
+    margin: 0 16px;
+    text-decoration: none;
+}
+
+.header .main-menu a {
+    color: #BBBBCB;
+}
+
+.header .main-menu a:hover,
+.header .main-menu a.active {
+    color: #fff;
+}
+
+.footer .main-menu a {
+    color: var(--dark-blue);
+}
+
+.footer .main-menu a:hover,
+.footer .main-menu a.active {
+    color: var(--bg-blue);
+}
+
+.footer .main-menu a:last-child {
+    margin-right: 0;
+}
