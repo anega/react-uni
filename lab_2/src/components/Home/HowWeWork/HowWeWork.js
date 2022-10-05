@@ -8,7 +8,7 @@ const HowWeWork = () => (
             <div className="how-we-work-info">
                 <h2>How we work</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                <a href="#" className="label arrow-link">Get in touch with us ⟶</a>
+                <a href="/#" className="label arrow-link">Get in touch with us ⟶</a>
             </div>
             <div className="work-strategy-list">
                 <div className="work-strategy-item">

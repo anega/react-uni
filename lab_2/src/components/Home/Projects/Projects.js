@@ -7,7 +7,7 @@ const Projects = () => (
         <div className="section-inner">
             <div className="projects-heading">
                 <h2>View our projects</h2>
-                <a href="#" className="label-small arrow-link">View More ⟶</a>
+                <a href="/#" className="label-small arrow-link">View More ⟶</a>
             </div>
             <div className="projects-gallery">
                 <div className="main-gallery-item">
@@ -18,7 +18,7 @@ const Projects = () => (
                             <p className="text-semi-bold">Euismod faucibus turpis eu gravida mi. Pellentesque et
                                 velit
                                 aliquam</p>
-                            <a href="#" className="text-semi-bold arrow-link">View project ⟶</a>
+                            <a href="/#" className="text-semi-bold arrow-link">View project ⟶</a>
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@ const Projects = () => (
                         <div className="projects-gallery-item-info-wrap">
                             <div className="projects-gallery-item-info">
                                 <h6>Unisaas Website Design</h6>
-                                <a href="#" className="text-semi-bold arrow-link">View portfolio ⟶</a>
+                                <a href="/#" className="text-semi-bold arrow-link">View portfolio ⟶</a>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@ const Projects = () => (
                         <div className="projects-gallery-item-info-wrap">
                             <div className="projects-gallery-item-info">
                                 <h6>Another title</h6>
-                                <a href="#" className="text-semi-bold arrow-link">View portfolio ⟶</a>
+                                <a href="/#" className="text-semi-bold arrow-link">View portfolio ⟶</a>
                             </div>
                         </div>
                     </div>

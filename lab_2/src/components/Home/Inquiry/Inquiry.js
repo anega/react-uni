@@ -1,6 +1,5 @@
 import React from 'react';
 import './Inquiry.css';
-import RoundedButtonLink from "../../RoundedButtonLink/RoundedButtonLink";
 
 const Inquiry = () => (
     <div className="section send-inquiry">
@@ -22,7 +21,7 @@ const Inquiry = () => (
                     <input type="text" placeholder="Paste your Figma design URL"/>
                     <button className="btn btn-light">Send an Inquiry</button>
                 </form>
-                <p><a href="#" className="label arrow-link">Get in touch with us ⟶</a></p>
+                <p><a href="/#" className="label arrow-link">Get in touch with us ⟶</a></p>
             </div>
         </div>
     </div>
