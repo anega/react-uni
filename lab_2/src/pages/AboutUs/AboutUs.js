@@ -3,6 +3,7 @@ import {default as AboutUsComponent} from '../../components/AboutUs/AboutUs/Abou
 import WhoWeAre from "../../components/AboutUs/WhoWeAre/WhoWeAre";
 import Process from "../../components/AboutUs/Process/Process";
 import MissionVision from "../../components/AboutUs/MissionVision/MissionVision";
+import Benefits from "../../components/AboutUs/Benefits/Benefits";
 
 const AboutUs = () => {
     return (
@@ -11,6 +12,7 @@ const AboutUs = () => {
             <WhoWeAre/>
             <Process/>
             <MissionVision/>
+            <Benefits/>
         </>
     );
 };
