@@ -5,6 +5,7 @@ import Projects from "../../components/Home/Projects/Projects";
 import Features from "../../components/Home/Features/Features";
 import Faq from "../../components/Home/Faq/Faq";
 import Inquiry from "../../components/Home/Inquiry/Inquiry";
+import Blog from "../../components/Home/Blog/Blog";
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <Features/>
             <Faq/>
             <Inquiry/>
+            <Blog/>
         </>
     );
 };
