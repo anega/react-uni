@@ -1,4 +1,4 @@
-.header {
+.header.section {
     background: var(--bg-blue);
     padding: 16px 0;
 }
