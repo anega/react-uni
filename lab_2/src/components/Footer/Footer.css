@@ -80,6 +80,10 @@
     margin-right: 28px;
 }
 
+.upper-footer .social-links a {
+    color: #fff;
+}
+
 .footer .section.lower-footer {
     background: #fff;
     padding: 32px 0;

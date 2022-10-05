@@ -1,4 +1,5 @@
 import React from 'react';
+import {FaFacebook, FaTwitter, FaInstagram, FaLinkedin} from 'react-icons/fa';
 import './Footer.css';
 import Logo from "../Logo/Logo";
 import MainMenu from "../MainMenu/MainMenu";
@@ -32,22 +33,22 @@ const Footer = () => {
                         <ul className="social-links">
                             <li>
                                 <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
-                                    icon{/*<img src="assets/images/facebook.svg" alt="Finsweet facebook account" />*/}
+                                    <FaFacebook/>
                                 </a>
                             </li>
                             <li>
                                 <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
-                                    icon{/*<img src="assets/images/twitter.svg" alt="Finsweet twitter account" />*/}
+                                    <FaTwitter/>
                                 </a>
                             </li>
                             <li>
                                 <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-                                    icon{/*<img src="assets/images/instagram.svg" alt="Fensweet instagram account" />*/}
+                                    <FaInstagram/>
                                 </a>
                             </li>
                             <li>
                                 <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                                    icon{/*<img src="assets/images/linkedin.svg" alt="Fensweet linkedin account" />*/}
+                                    <FaLinkedin/>
                                 </a>
                             </li>
                         </ul>
