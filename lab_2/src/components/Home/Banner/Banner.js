@@ -1,6 +1,6 @@
 import React from 'react';
 import './Banner.css';
-import HeroImage from '../../../assets/images/hero-home.png';
+import {HeroHome} from "../../../assets/images";
 import RoundedButtonLink from "../../RoundedButtonLink/RoundedButtonLink";
 
 const Banner = () => (
@@ -17,7 +17,7 @@ const Banner = () => (
                 </div>
             </div>
             <div className="banner-image-wrap">
-                <img src={HeroImage} alt="Finsweet Building stellar websites for early startups"/>
+                <img src={HeroHome} alt="Finsweet Building stellar websites for early startups"/>
             </div>
         </div>
     </div>

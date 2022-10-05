@@ -1,10 +1,10 @@
 import React from 'react';
-import logo from "../../assets/images/logo.svg";
+import {LogoImg} from "../../assets/images";
 import {Link} from "react-router-dom";
 
 const Logo = () => (
     <Link to="/">
-        <img src={logo} alt="Fensweet logo"/>
+        <img src={LogoImg} alt="Fensweet logo"/>
     </Link>
 );
 
