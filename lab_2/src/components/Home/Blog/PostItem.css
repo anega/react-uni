@@ -1,0 +1,34 @@
+.blog-post img {
+    vertical-align: bottom;
+    margin-bottom: 40px;
+    width: 100%;
+    height: auto;
+}
+
+.blog-post .blog-post-date,
+.blog-post .blog-post-title a,
+.blog-post .blog-post-body {
+    color: var(--dark-blue);
+    margin-bottom: 16px;
+}
+
+.blog-post .blog-post-title a {
+    text-decoration: none;
+}
+
+.blog-post .blog-post-title a:hover {
+    color: var(--bg-blue);
+}
+
+.blog-post .blog-post-body {
+    margin-bottom: 32px;
+}
+
+.blog-post .blog-post-link {
+    color: var(--dark-blue);
+    text-decoration: none;
+}
+
+.blog-post .blog-post-link:hover {
+    color: var(--bg-blue);
+}

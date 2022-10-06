@@ -1,5 +1,5 @@
 import React from 'react';
-import {data} from '../../../data/howWeWork.js';
+import {data} from '../../../data/howWeWorkData.js';
 import StrategyList from "./StrategyList";
 import './HowWeWork.css';
 
