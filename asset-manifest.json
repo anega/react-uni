@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/react-uni/static/css/main.e1f471c6.css",
-    "main.js": "/react-uni/static/js/main.020b47e9.js",
+    "main.css": "/react-uni/static/css/main.cda014cc.css",
+    "main.js": "/react-uni/static/js/main.81aa1241.js",
+    "static/media/404.mp4": "/react-uni/static/media/404.212c101ad0a1c59c304d.mp4",
     "static/media/Poppins-Thin.svg": "/react-uni/static/media/Poppins-Thin.a49f72a225a7303d0745.svg",
     "static/media/Poppins-ExtraLight.svg": "/react-uni/static/media/Poppins-ExtraLight.66c33e43fa3dbce982c2.svg",
     "static/media/Poppins-Light.svg": "/react-uni/static/media/Poppins-Light.04ce2953ed3c543a8f0b.svg",
@@ -56,11 +57,11 @@
     "static/media/team-02.jpg": "/react-uni/static/media/team-02.34585214c27f8c0debad.jpg",
     "static/media/logo.svg": "/react-uni/static/media/logo.b348e7ac35fc97c2e3d81efcbc0d5ced.svg",
     "index.html": "/react-uni/index.html",
-    "main.e1f471c6.css.map": "/react-uni/static/css/main.e1f471c6.css.map",
-    "main.020b47e9.js.map": "/react-uni/static/js/main.020b47e9.js.map"
+    "main.cda014cc.css.map": "/react-uni/static/css/main.cda014cc.css.map",
+    "main.81aa1241.js.map": "/react-uni/static/js/main.81aa1241.js.map"
   },
   "entrypoints": [
-    "static/css/main.e1f471c6.css",
-    "static/js/main.020b47e9.js"
+    "static/css/main.cda014cc.css",
+    "static/js/main.81aa1241.js"
   ]
 }
