@@ -1,0 +1,14 @@
+.work-strategy-item {
+    box-sizing: border-box;
+    flex-basis: 50%;
+    margin-bottom: 48px;
+    padding-right: 40px;
+}
+
+.work-strategy-item img {
+    margin-bottom: 12px;
+}
+
+.work-strategy-item h5 {
+    margin-bottom: 4px;
+}
