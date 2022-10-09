@@ -1,10 +1,10 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-const Header = (props) => (
+const Header = () => (
     <header>
         <h1>
-            <Link end to="/">FLAT UI COLORS 2</Link>
+            <Link to="/">FLAT UI COLORS 2</Link>
         </h1>
     </header>
 );
