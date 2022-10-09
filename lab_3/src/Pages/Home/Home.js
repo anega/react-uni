@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
 import PaletteList from "../../components/PaletteList/PaletteList";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => (
     <div className="home-page">
