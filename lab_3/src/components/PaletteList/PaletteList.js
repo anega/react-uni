@@ -1,6 +1,7 @@
 import React from 'react';
 import paletteList from "../../data/pallete.json";
 import Palette from "../Palette/Palette";
+import './PaletteList.css';
 
 const PaletteList = () => (
     <div className="palette-list">
