@@ -1,9 +1,13 @@
 import React from 'react';
+import './Footer.css';
 
 const Footer = () => (
-    <footer>
+    <footer className="home-footer">
         <div className="content-wrap">
-            This is footer
+            <p>This clone site was created by me © 2022.</p>
+            <p>
+                Original site <a href="https://flatuicolors.com/" target="_blank" rel="noreferrer">flatuicolors</a>.
+            </p>
         </div>
     </footer>
 );

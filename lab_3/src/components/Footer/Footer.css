@@ -1,0 +1,20 @@
+.home-footer {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 24px;
+}
+
+.home-footer .content-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-footer p,
+.home-footer p a {
+    color: #fff;
+    margin: 0;
+}
+
+.home-footer p a {
+    text-decoration: underline;
+}
