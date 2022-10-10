@@ -3,3 +3,38 @@
     grid-template-columns: repeat(5, 1fr);
     height: calc(100vh - 90px);
 }
+
+.palette-details-colors .palette-color {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: relative;
+    padding: 8px;
+}
+
+.palette-details-colors .palette-color p {
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.copy-color-btn {
+    color: #fff;
+    border-radius: 5px;
+    border: 2px solid hsla(0,0%,100%,.2);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    padding: 7px 30px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity .3s,-webkit-transform .2s;
+    /*z-index: 1;*/
+}
+
+.palette-details-colors .palette-color:hover .copy-color-btn {
+    opacity: 1;
+}

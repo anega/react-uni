@@ -8,6 +8,7 @@ const PaletteDetails = ({palette}) => (
                  style={{background: color.color}}
                  className="palette-color">
                 <p>{color.name}</p>
+                <span className="copy-color-btn">COPY</span>
             </div>
         ))}
     </div>
