@@ -1,0 +1,24 @@
+header {
+    padding: 26px 0 42px;
+}
+
+header h1 {
+    color: #fff;
+    margin: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+header h1 a {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-shadow: 0 1px, 1px 0, 1px 1px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
