@@ -1,0 +1,10 @@
+.palette-footer {
+    background: #fff;
+    color: #000;
+    padding: 16px 20px;
+    text-align: right;
+}
+
+.palette-footer p {
+    margin: 0;
+}
