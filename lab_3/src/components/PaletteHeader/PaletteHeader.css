@@ -3,8 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 40px;
-    padding: 12px 20px 8px;
+    padding: 7px 20px;
 }
 
 .palette-header .palette-back-btn {
@@ -14,3 +13,43 @@
 .palette-header p {
     margin: 0;
 }
+
+.active-color-format {
+    background: #000;
+    border-radius: 4px;
+    width: 270px;
+    height: 36px;
+    line-height: 34px;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+    cursor: pointer;
+    text-indent: -24px;
+    user-select: none;
+    transition: all .2s;
+}
+
+.active-color-format:active {
+    transform: scale(.97);
+}
+
+.active-color-format:after {
+    display: block;
+    content: "\25B2";
+    right: 38px;
+    font-size: 12px;
+    position: absolute;
+    top: 2px;
+    transform: rotate(180deg);
+    text-indent: inherit;
+}
+
+/* TODO: play with class */
+/* When menu is open *!*/
+/*.active-color-format:after {*/
+/*    transform: rotate(0deg);*/
+/*    top: 0;*/
+/*    right: 14px;*/
+/*}*/
