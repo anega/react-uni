@@ -3,3 +3,7 @@
 *, html, body {
     font-family: 'Barlow', 'Helvetica', 'Arial', sans-serif;
 }
+
+a {
+    text-decoration: none;
+}
