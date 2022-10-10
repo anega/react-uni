@@ -1,0 +1,11 @@
+.palette-preview {
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.palette-preview .preview-color {
+    height: 38px;
+}

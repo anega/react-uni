@@ -1,9 +1,10 @@
 import React from 'react';
+import './PaletteColorsPreview.css';
 
 const PaletteColorsPreview = ({colors}) => (
-    <div>
+    <div className="palette-preview">
         {colors.map((color) => (
-            <span style={{width: '45px', height: '16px', backgroundColor: `${color.color}`}}>{color.name}</span>
+            <div className="preview-color" key={color.color} style={{backgroundColor: `${color.color}`}}></div>
         ))}
     </div>
 );
