@@ -1,6 +1,7 @@
 .palette-footer {
     background: #fff;
     color: #000;
+    height: 50px;
     padding: 16px 20px;
     text-align: right;
 }

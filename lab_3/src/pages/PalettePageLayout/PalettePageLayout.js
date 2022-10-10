@@ -4,6 +4,7 @@ import data from '../../data/pallete.json';
 import PaletteDetails from "../../components/PaletteDetails/PaletteDetails";
 import PaletteHeader from "../../components/PaletteHeader/PaletteHeader";
 import PaletteFooter from "../../components/PaletteFooter/PaletteFooter";
+import './PalettePageLayout.css';
 
 const PalettePageLayout = () => {
     const params = useParams();
@@ -14,13 +15,11 @@ const PalettePageLayout = () => {
     }
 
     return (
-        <>
+        <div className="palette-page">
             <PaletteHeader/>
-            <hr/>
             <PaletteDetails palette={palette}/>
-            <hr/>
             <PaletteFooter palette={palette}/>
-        </>
+        </div>
     );
 };
 

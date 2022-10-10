@@ -1,0 +1,5 @@
+.palette-details-colors {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    height: calc(100vh - 90px);
+}
