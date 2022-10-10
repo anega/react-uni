@@ -1,12 +1,12 @@
 import React from 'react';
 import paletteList from "../../data/pallete.json";
-import Palette from "../Palette/Palette";
+import PaletteListItem from "../PaletteListItem/PaletteListItem";
 import './PaletteList.css';
 
 const PaletteList = () => (
     <div className="palette-list">
         {paletteList.map((item) => (
-            <Palette key={item.id} palette={item}/>
+            <PaletteListItem key={item.id} palette={item}/>
         ))}
     </div>
 );

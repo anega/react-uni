@@ -1,10 +1,10 @@
 import React from 'react';
 import PaletteColorsPreview from "../PaletteColorsPreview/PaletteColorsPreview";
-import './Palette.css';
+import './PaletteListItem.css';
 import {Link} from "react-router-dom";
 
-const Palette = ({palette}) => (
-        <Link to="/" className="palette-item">
+const PaletteListItem = ({palette}) => (
+        <Link to={`palette/${palette.id}`} className="palette-item">
             <PaletteColorsPreview colors={palette.colors}/>
             <div className="palette-info">
                 <h2>{palette.paletteName}</h2>
@@ -13,4 +13,4 @@ const Palette = ({palette}) => (
         </Link>
 );
 
-export default Palette;
+export default PaletteListItem;
