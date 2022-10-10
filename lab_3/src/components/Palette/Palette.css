@@ -1,0 +1,23 @@
+.palette-item {
+    background: #fff;
+    border-radius: 4px;
+    padding: 9px 10px;
+}
+
+.palette-item .palette-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.palette-item .palette-info h2 {
+    color: #000;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .55px;
+    margin: 0;
+}
+
+.palette-item .palette-info  .palette-emoji {
+    font-size: 20px;
+}
