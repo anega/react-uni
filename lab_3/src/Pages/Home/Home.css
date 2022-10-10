@@ -1,0 +1,8 @@
+.home-page {
+    background: url("../../assets/bg.svg") repeat;
+}
+
+.home-page .content-wrap {
+    margin: 0 auto;
+    width: 1024px;
+}
