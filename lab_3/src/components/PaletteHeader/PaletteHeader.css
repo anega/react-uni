@@ -1,0 +1,15 @@
+.palette-header {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px 8px;
+}
+
+.palette-header .palette-back-btn {
+    color: #000;
+}
+
+.palette-header p {
+    margin: 0;
+}
