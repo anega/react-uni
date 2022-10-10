@@ -1,8 +1,8 @@
-header {
+.home-header {
     padding: 26px 0 42px;
 }
 
-header h1 {
+.home-header h1 {
     color: #fff;
     margin: 0;
     -webkit-user-select: none;
@@ -11,7 +11,7 @@ header h1 {
     user-select: none;
 }
 
-header h1 a {
+.home-header h1 a {
     color: #fff;
     font-size: 24px;
     font-weight: 600;

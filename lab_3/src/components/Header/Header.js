@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import './Header.css';
 
 const Header = () => (
-    <header>
+    <header className="home-header">
         <h1>
             <Link to="/">FLAT UI COLORS 2</Link>
         </h1>
