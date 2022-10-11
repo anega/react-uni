@@ -1,0 +1,78 @@
+.color-copied-overlay {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: -20%;
+    width: 140%;
+    height: 100%;
+    transition: opacity .4s;
+    pointer-events: none;
+}
+
+.show-copied .color-copied-overlay {
+    opacity: 1;
+}
+
+.color-copied-overlay .color-copied-overlay-text {
+    width: 100%;
+}
+
+.color-copied-overlay h1 {
+    background: hsla(0, 0%, 100%, .2);
+    color: #ecf0f1;
+    font-size: 120px;
+    font-weight: 600;
+    margin: 0 0 60px;
+    padding: 25px 0 40px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px #2c3e50;
+    width: 100%;
+    user-select: none;
+}
+
+.color-copied-overlay p {
+    color: #ecf0f1;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 1px 1px #444;
+}
+
+.copiedColorIn {
+    animation: copiedColorIn .4s ease;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards
+}
+
+.copiedColorOut {
+    animation: copiedColorOut .4s ease;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards
+}
+
+@keyframes copiedColorIn {
+    0% {
+        transform: scale(1.2);
+        opacity: 0
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1
+    }
+}
+
+@keyframes copiedColorOut {
+    0% {
+        transform: scale(1);
+        opacity: 1
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0
+    }
+}
