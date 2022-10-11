@@ -20,14 +20,29 @@ const PaletteDetails = ({palette}) => {
     ];
 
     function setCopiedInfo(color) {
-        setCopied((prevState) => {
-            return {
-                showOverlay: true,
-                showText: true,
-                message: copiedMessages[Math.floor(Math.random() * copiedMessages.length)],
-                color: color
-            };
-        });
+        const newState = {
+            showOverlay: true,
+            showText: true,
+            message: '',
+            color: color
+        };
+
+        navigator.clipboard.writeText(color)
+            .then(() => {
+                setCopied((prevState) => {
+                    return {
+                        ...newState,
+                        message: copiedMessages[Math.floor(Math.random() * copiedMessages.length)],
+                    };
+                });
+            }, () => {
+                setCopied((prevState) => {
+                    return {
+                        ...newState,
+                        message: 'Can\'t copy color',
+                    };
+                });
+            });
     }
 
     useEffect(() => {
