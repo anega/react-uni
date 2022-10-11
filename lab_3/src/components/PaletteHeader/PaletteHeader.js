@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import './PaletteHeader.css';
 
-const PaletteHeader = () => {
+const PaletteHeader = ({isMuted, onClick}) => {
     return (
         <header className="palette-header">
             <Link to={".."} className="palette-back-btn">⟵ Back</Link>
@@ -15,7 +15,7 @@ const PaletteHeader = () => {
                 {/*    <li>RGBA - (1,2,3,0.4)</li>*/}
                 {/*</ul>*/}
             </div>
-            <div className="sound-btn">Sound On 🔊</div>
+            <div className="sound-btn" onClick={onClick}>Sound {`${isMuted ? 'Off 🔇' : 'On 🔊'}`}</div>
         </header>
     );
 };

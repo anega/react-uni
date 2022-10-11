@@ -53,3 +53,10 @@
 /*    top: 0;*/
 /*    right: 14px;*/
 /*}*/
+
+.palette-header .sound-btn {
+    cursor: pointer;
+    text-align: right;
+    max-width: 95px;
+    width: 100%;
+}

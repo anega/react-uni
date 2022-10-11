@@ -12,7 +12,6 @@
     align-items: flex-end;
     position: relative;
     padding: 8px;
-    /*z-index: 2;*/
 }
 
 .palette-details-colors .palette-color p {

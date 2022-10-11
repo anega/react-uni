@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useParams} from "react-router-dom";
 import data from '../../data/pallete.json';
 import PaletteDetails from "../../components/PaletteDetails/PaletteDetails";
@@ -7,8 +7,13 @@ import PaletteFooter from "../../components/PaletteFooter/PaletteFooter";
 import './PalettePageLayout.css';
 
 const PalettePageLayout = () => {
+    const [isMuted, setIsMuted] = useState(false);
     const params = useParams();
     const palette = getPalette(params.id);
+
+    function handleSound() {
+        setIsMuted((prevState) => !prevState);
+    }
 
     function getPalette(id) {
         return data.find((palette) => palette.id === id);
@@ -16,8 +21,8 @@ const PalettePageLayout = () => {
 
     return (
         <div className="palette-page">
-            <PaletteHeader/>
-            <PaletteDetails palette={palette}/>
+            <PaletteHeader isMuted={isMuted} onClick={handleSound}/>
+            <PaletteDetails palette={palette} isMuted={isMuted}/>
             <PaletteFooter palette={palette}/>
         </div>
     );

@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import './PaletteDetails.css';
 import CopiedOverlay from "../CopiedOverlay/CopiedOverlay";
+import audioFile from '../../assets/src_notify.mp3';
 
-const PaletteDetails = ({palette}) => {
+const PaletteDetails = ({palette, isMuted}) => {
     const [copied, setCopied] = useState({
         showOverlay: false,
         showText: false,
@@ -19,6 +20,8 @@ const PaletteDetails = ({palette}) => {
         'Right one!',
     ];
 
+    const audio = new Audio(audioFile);
+
     function setCopiedInfo(color) {
         const newState = {
             showOverlay: true,
@@ -26,6 +29,10 @@ const PaletteDetails = ({palette}) => {
             message: '',
             color: color
         };
+
+        if (!isMuted) {
+            audio.play();
+        }
 
         navigator.clipboard.writeText(color)
             .then(() => {
