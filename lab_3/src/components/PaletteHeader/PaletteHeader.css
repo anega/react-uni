@@ -54,19 +54,18 @@
     text-indent: inherit;
 }
 
-/* TODO: play with class */
-/* When menu is open *!*/
-/*.active-color-format:after {*/
-/*    transform: rotate(0deg);*/
-/*    top: 0;*/
-/*    right: 14px;*/
-/*}*/
+.show .active-color-format:after {
+    top: 0;
+    right: 14px;
+    transform: rotate(0deg);
+}
 
 .color-format-list {
     background: #fff;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .31), 0 1px 13px 10px rgba(0, 0, 0, .02);
     color: #000;
+    display: none;
     font-size: 15px;
     font-weight: 600;
     list-style: none;
@@ -80,6 +79,10 @@
     animation-name: pop-menu;
     animation-duration: 1s;
     animation-timing-function: linear
+}
+
+.show .color-format-list {
+    display: block;
 }
 
 .color-format-list li {
