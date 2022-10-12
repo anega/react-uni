@@ -8,12 +8,12 @@ const PaletteHeader = ({isMuted, onClick}) => {
             <Link to={".."} className="palette-back-btn">⟵ Back</Link>
             <div className="color-format">
                 <p className="active-color-format">Copy Format: HEX (#AA1923)</p>
-                {/*<ul className="color-format-list">*/}
-                {/*    <li>HEX (#AA1923)</li>*/}
-                {/*    <li>HEX (AA1923)</li>*/}
-                {/*    <li>RGB - (1,2,3)</li>*/}
-                {/*    <li>RGBA - (1,2,3,0.4)</li>*/}
-                {/*</ul>*/}
+                <ul className="color-format-list">
+                    <li>HEX (#AA1923)</li>
+                    <li>HEX (AA1923)</li>
+                    <li>RGB - (1,2,3)</li>
+                    <li>RGBA - (1,2,3,0.4)</li>
+                </ul>
             </div>
             <div className="sound-btn" onClick={onClick}>Sound {`${isMuted ? 'Off 🔇' : 'On 🔊'}`}</div>
         </header>

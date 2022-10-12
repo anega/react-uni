@@ -1,3 +1,5 @@
+@import "./dropdown-animation.css";
+
 .palette-header {
     background: #fff;
     display: flex;
@@ -10,8 +12,18 @@
     color: #000;
 }
 
+.palette-header .palette-back-btn:active,
+.active-color-format:active,
+.palette-header .sound-btn :active {
+    transform: scale(.97);
+}
+
 .palette-header p {
     margin: 0;
+}
+
+.color-format {
+    position: relative;
 }
 
 .active-color-format {
@@ -29,10 +41,6 @@
     text-indent: -24px;
     user-select: none;
     transition: all .2s;
-}
-
-.active-color-format:active {
-    transform: scale(.97);
 }
 
 .active-color-format:after {
@@ -53,6 +61,51 @@
 /*    top: 0;*/
 /*    right: 14px;*/
 /*}*/
+
+.color-format-list {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .31), 0 1px 13px 10px rgba(0, 0, 0, .02);
+    color: #000;
+    font-size: 15px;
+    font-weight: 600;
+    list-style: none;
+    margin: 20px 0 0 -135px;
+    padding: 0;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    z-index: 100;
+    animation-name: pop-menu;
+    animation-duration: 1s;
+    animation-timing-function: linear
+}
+
+.color-format-list li {
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    border-bottom: 1px solid #ecf0f1;
+    user-select: none;
+    letter-spacing: 1px
+}
+
+.color-format-list li:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px
+}
+
+.color-format-list li:last-child {
+    border-bottom: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px
+}
+
+.color-format-list li:hover {
+    background: #000;
+    color: #fff
+}
 
 .palette-header .sound-btn {
     cursor: pointer;
