@@ -19,6 +19,14 @@
 }
 
 .projects-gallery {
+    display: grid;
+    grid-template-columns: 843px 405px;
+    grid-template-rows: repeat(2, 284px);
+    grid-gap: 32px;
+}
+
+/*
+.projects-gallery {
     display: flex;
     justify-content: space-between;
 }
@@ -110,4 +118,4 @@
 .projects-gallery-item img {
     width: 100%;
     height: auto;
-}
+}*/

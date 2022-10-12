@@ -1,6 +1,7 @@
 import React from 'react';
+import {data} from '../../../data/projectsData';
+import Project from "./Project";
 import './Projects.css';
-import {Project01, Project02, Project03} from '../../../assets/images';
 
 const Projects = () => (
     <div className="section projects">
@@ -10,7 +11,11 @@ const Projects = () => (
                 <a href="/#" className="label-small arrow-link">View More ⟶</a>
             </div>
             <div className="projects-gallery">
-                <div className="main-gallery-item">
+                {data.map((project) => (
+                    <Project key={project.id} project={project}/>
+                ))}
+
+                {/*<div className="main-gallery-item">
                     <img src={Project01} alt="Finsweet project"/>
                     <div className="main-gallery-item-info-wrap">
                         <div className="main-gallery-item-info">
@@ -41,7 +46,7 @@ const Projects = () => (
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>*/}
             </div>
         </div>
     </div>
