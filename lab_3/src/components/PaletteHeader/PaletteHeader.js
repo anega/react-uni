@@ -5,16 +5,10 @@ import {formats} from '../../data/colorFormatConstants';
 
 const PaletteHeader = ({isMuted, soundAction, colorFormatData, formatChangeAction}) => {
     const [showDropdown, setShowDropdown] = useState(false);
-    // const [copyFormatText, setCopyFormatText] = useState('HEX (#AA1923)');
 
     function handleShowDropdown() {
         setShowDropdown((prevState) => !prevState);
     }
-
-    // function handleFormatChange(event) {
-    //     setCopyFormatText((prevState) => event.target.textContent);
-    //     formatChange(event.target.dataset.value);
-    // }
 
     return (
         <header className="palette-header">

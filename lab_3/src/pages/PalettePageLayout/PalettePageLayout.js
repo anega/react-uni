@@ -13,8 +13,6 @@ const PalettePageLayout = () => {
         colorFormatValue: formats.hex,
         colorFormatMessage: 'HEX (#AA1923)'
     });
-    // const [colorFormat, setColorFormat] = useState(formats.hex);
-    // const [copyFormatText, setCopyFormatText] = useState('HEX (#AA1923)');
     const params = useParams();
     const palette = getPalette(params.id);
 
