@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import chroma from 'chroma-js';
-import CopiedOverlay from "../CopiedOverlay/CopiedOverlay";
-import {formats} from "../../data/colorFormatConstants";
+import CopiedOverlay from '../CopiedOverlay/CopiedOverlay';
+import {formats} from '../../data/colorFormatConstants';
+import {copiedMessages} from '../../data/copiedMessages';
 import './PaletteDetails.css';
 import audioFile from '../../assets/src_notify.mp3';
 
@@ -13,15 +14,6 @@ const PaletteDetails = ({palette, isMuted, colorFormat}) => {
         color: '',
         formattedColor: '',
     });
-
-    const copiedMessages = [
-        'Copied!',
-        'Paste me!',
-        'It\'ll rock!',
-        'Will do!',
-        'Got it!',
-        'Right one!',
-    ];
 
     const audio = new Audio(audioFile);
 
@@ -104,7 +96,7 @@ const PaletteDetails = ({palette, isMuted, colorFormat}) => {
                     <span className="copy-color-btn">COPY</span>
                 </div>
             ))}
-            <CopiedOverlay copied={copied} />
+            <CopiedOverlay copied={copied}/>
         </div>
     );
 };
