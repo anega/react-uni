@@ -6,7 +6,7 @@ const CopiedOverlay = ({copied}) => (
         style={{background: copied.color}}>
         <div className={`color-copied-overlay-text ${copied.showText ? 'copiedColorIn' : 'copiedColorOut'}`}>
             <h1><span>{copied.message}</span></h1>
-            <p>{copied.color}</p>
+            <p>{copied.formattedColor}</p>
         </div>
     </div>
 );

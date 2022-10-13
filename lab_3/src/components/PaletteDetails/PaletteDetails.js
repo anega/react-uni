@@ -1,14 +1,17 @@
 import React, {useEffect, useState} from 'react';
-import './PaletteDetails.css';
+import chroma from 'chroma-js';
 import CopiedOverlay from "../CopiedOverlay/CopiedOverlay";
+import {formats} from "../../data/colorFormatConstants";
+import './PaletteDetails.css';
 import audioFile from '../../assets/src_notify.mp3';
 
-const PaletteDetails = ({palette, isMuted}) => {
+const PaletteDetails = ({palette, isMuted, colorFormat}) => {
     const [copied, setCopied] = useState({
         showOverlay: false,
         showText: false,
         message: 'Copied!',
-        color: ''
+        color: '',
+        formattedColor: '',
     });
 
     const copiedMessages = [
@@ -22,31 +25,49 @@ const PaletteDetails = ({palette, isMuted}) => {
 
     const audio = new Audio(audioFile);
 
-    function setCopiedInfo(color) {
-        const newState = {
-            showOverlay: true,
-            showText: true,
-            message: '',
-            color: color
-        };
-
+    function handleCopiedInfo(color) {
         if (!isMuted) {
             audio.play();
         }
 
-        navigator.clipboard.writeText(color)
+        let formattedColorValue;
+        switch (colorFormat) {
+            case formats.hex:
+                formattedColorValue = color;
+                break;
+            case formats.hexNoHash:
+                formattedColorValue = color.slice(1);
+                break;
+            case formats.rgb:
+                formattedColorValue = `rgb(${chroma(color).rgb()})`;
+                break;
+            case formats.rgba:
+                formattedColorValue = `rgba(${chroma(color).rgba()})`;
+                break;
+            default:
+                formattedColorValue = color;
+                break;
+        }
+
+        navigator.clipboard.writeText(formattedColorValue)
             .then(() => {
                 setCopied((prevState) => {
                     return {
-                        ...newState,
+                        showOverlay: true,
+                        showText: true,
                         message: copiedMessages[Math.floor(Math.random() * copiedMessages.length)],
+                        color: color,
+                        formattedColor: formattedColorValue,
                     };
                 });
             }, () => {
                 setCopied((prevState) => {
                     return {
-                        ...newState,
+                        showOverlay: true,
+                        showText: true,
                         message: 'Can\'t copy color',
+                        color: color,
+                        formattedColor: formattedColorValue,
                     };
                 });
             });
@@ -76,14 +97,14 @@ const PaletteDetails = ({palette, isMuted}) => {
         <div className={`palette-details-colors ${copied.showOverlay ? 'show-copied' : ''}`}>
             {palette.colors.map((color) => (
                 <div key={color.name}
-                     onClick={() => setCopiedInfo(color.color)}
+                     onClick={() => handleCopiedInfo(color.color)}
                      style={{background: color.color}}
                      className="palette-color">
                     <p>{color.name}</p>
                     <span className="copy-color-btn">COPY</span>
                 </div>
             ))}
-            <CopiedOverlay copied={copied}/>
+            <CopiedOverlay copied={copied} />
         </div>
     );
 };
