@@ -5,6 +5,10 @@
     overflow: hidden;
 }
 
+.palette-details-colors.show-copied {
+    pointer-events: none;
+}
+
 .palette-details-colors .palette-color {
     cursor: pointer;
     display: flex;
