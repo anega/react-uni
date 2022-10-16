@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
+import {motion} from 'framer-motion';
 import data from '../../data/pallete.json';
+import {formats} from "../../data/colorFormatConstants";
 import PaletteDetails from "../../components/PaletteDetails/PaletteDetails";
 import PaletteHeader from "../../components/PaletteHeader/PaletteHeader";
 import PaletteFooter from "../../components/PaletteFooter/PaletteFooter";
 import './PalettePageLayout.css';
-import {formats} from "../../data/colorFormatConstants";
 
 const PalettePageLayout = () => {
     const [isMuted, setIsMuted] = useState(localStorage.getItem('isMuted') || false);
@@ -47,8 +48,13 @@ const PalettePageLayout = () => {
         return data.find((palette) => palette.id === id);
     }
 
+    const pageTransition = {
+        ease: 'easeOut',
+        duration: 0.3,
+    };
+
     return (
-        <div className="palette-page">
+        <motion.div className="palette-page">
             <PaletteHeader
                 isMuted={isMuted}
                 soundAction={handleSound}
@@ -56,7 +62,13 @@ const PalettePageLayout = () => {
                 formatChangeAction={handleColorFormat}/>
             <PaletteDetails palette={palette} isMuted={isMuted} colorFormat={colorFormat.colorFormatValue}/>
             <PaletteFooter palette={palette}/>
-        </div>
+            <motion.div
+                initial={{right: 0}}
+                animate={{right: '100%'}}
+                exit={{right: 0}}
+                transition={pageTransition}
+                className="palettes-transition-overlay"/>
+        </motion.div>
     );
 };
 
