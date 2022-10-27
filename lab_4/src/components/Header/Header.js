@@ -11,33 +11,45 @@ const Header = () => {
     }
 
     return (
-        <header className="relative flex justify-between items-center bg-gray-50 py-5 pr-6 pl-4">
-            <div className="flex items-center">
-                <h1>
-                    <Link to="/">
-                        <img className="w-[121px] h-[32px]" src={logo} alt="logo"/>
-                    </Link>
-                </h1>
-                <nav className={isMenuShown
-                    ? "transition-transform translate-x-0 absolute flex flex-col bg-gray-50 top-[100%] left-0 right-0 pb-3"
-                    : "transition-transform -translate-x-full absolute flex flex-col bg-gray-50 top-[100%] left-0 right-0 pb-3"}>
-                    {['Home', 'Categories', 'Testlink'].map((title, index) => (
-                        <Link key={index}
-                              to="/"
-                              className="text-base py-2 pr-6 pl-4 active:bg-gray-200 border-solid border-b border-gray-100">{title}</Link>
-                    ))}
+        <header className="bg-gray-50 border-solid border-b border-[#F2F4F7]">
+            <div
+                className="relative flex justify-between items-center w-full py-5 pr-6 pl-4 md:max-w-[1216px] md:mx-auto">
+                <div className="flex items-center">
+                    <h1>
+                        <Link to="/">
+                            <img className="w-[121px] h-[32px]" src={logo} alt="logo"/>
+                        </Link>
+                    </h1>
+                    <nav className="hidden md:block px-2">
+                        {['Home', 'Categories', 'Testlink'].map((title, index) => (
+                            <Link key={index} to="/" className="text-base text-gray-600 px-4">{title}</Link>
+                        ))}
+                    </nav>
+                    <nav className={isMenuShown
+                        ? "md:hidden transition-transform translate-x-0 absolute flex flex-col bg-gray-50 top-[100%] left-0 right-0 pb-3"
+                        : "md:hidden transition-transform -translate-x-full absolute flex flex-col bg-gray-50 top-[100%] left-0 right-0 pb-3"}>
+                        {['Home', 'Categories', 'Testlink'].map((title, index) => (
+                            <Link key={index}
+                                  to="/"
+                                  className="text-base py-2 pr-6 pl-4 active:bg-gray-200 border-solid border-b border-gray-100">{title}</Link>
+                        ))}
+                        <Link to="/"
+                              className="text-base py-2 pr-6 pl-4 active:bg-gray-200 border-solid border-b border-gray-100">Log
+                            in</Link>
+                        <Link to="/" className="text-base py-2 pr-6 pl-4 active:bg-gray-200">Sign up</Link>
+                    </nav>
+                </div>
+                <div className="hidden md:block">
+                    <Link to="/" className="text-base text-gray-600 pr-7">Log in</Link>
                     <Link to="/"
-                          className="text-base py-2 pr-6 pl-4 active:bg-gray-200 border-solid border-b border-gray-100">Log
-                        in</Link>
-                    <Link to="/" className="text-base py-2 pr-6 pl-4 active:bg-gray-200">Sign up</Link>
-                </nav>
+                          className="bg-purple-600 hover:active:bg-purple-700 rounded-lg text-base text-white px-4 py-2.5">Sign
+                        up</Link>
+                </div>
+                {isMenuShown
+                    ? <AiOutlineClose color="#344054" size="20" className="md:hidden" onClick={handleDropdownMenu}/>
+                    : <AiOutlineMenu color="#344054" size="20" className="md:hidden" onClick={handleDropdownMenu}/>
+                }
             </div>
-            {isMenuShown
-                ? <AiOutlineClose color="#344054" size="20" className="md:hidden" onClick={handleDropdownMenu}/>
-                : <AiOutlineMenu color="#344054" size="20" className="md:hidden" onClick={handleDropdownMenu}/>
-            }
-
-
         </header>
     );
 };
