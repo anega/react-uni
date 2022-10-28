@@ -20,29 +20,31 @@ const Header = () => {
                             <img className="w-[121px] h-[32px]" src={logo} alt="logo"/>
                         </Link>
                     </h1>
-                    <nav className="hidden md:block px-2">
+                    <nav className="hidden px-2 md:block">
                         {['Home', 'Categories', 'Testlink'].map((title, index) => (
-                            <Link key={index} to="/" className="text-base text-gray-600 px-4">{title}</Link>
+                            <Link key={index} to="/"
+                                  className="px-4 text-base text-gray-600 hover:text-gray-700 active:text-gray-700">{title}</Link>
                         ))}
                     </nav>
                     <nav className={isMenuShown
-                        ? "md:hidden transition-transform translate-x-0 absolute flex flex-col bg-gray-50 top-[100%] left-0 right-0 pb-3"
-                        : "md:hidden transition-transform -translate-x-full absolute flex flex-col bg-gray-50 top-[100%] left-0 right-0 pb-3"}>
+                        ? "md:hidden transition-transform translate-x-0 absolute flex flex-col bg-gray-50 top-[100%] left-0 right-0 pb-3 z-10"
+                        : "md:hidden transition-transform -translate-x-full absolute flex flex-col bg-gray-50 top-[100%] left-0 right-0 pb-3 z-10"}>
                         {['Home', 'Categories', 'Testlink'].map((title, index) => (
                             <Link key={index}
                                   to="/"
-                                  className="text-base py-2 pr-6 pl-4 active:bg-gray-200 border-solid border-b border-gray-100">{title}</Link>
+                                  className="border-b border-solid border-gray-100 py-2 pr-6 pl-4 text-base active:bg-gray-200">{title}</Link>
                         ))}
                         <Link to="/"
-                              className="text-base py-2 pr-6 pl-4 active:bg-gray-200 border-solid border-b border-gray-100">Log
+                              className="border-b border-solid border-gray-100 py-2 pr-6 pl-4 text-base active:bg-gray-200">Log
                             in</Link>
-                        <Link to="/" className="text-base py-2 pr-6 pl-4 active:bg-gray-200">Sign up</Link>
+                        <Link to="/" className="py-2 pr-6 pl-4 text-base active:bg-gray-200">Sign up</Link>
                     </nav>
                 </div>
                 <div className="hidden md:block">
-                    <Link to="/" className="text-base text-gray-600 pr-7">Log in</Link>
+                    <Link to="/" className="pr-7 text-base text-gray-600 hover:text-gray-700 active:text-gray-700">Log
+                        in</Link>
                     <Link to="/"
-                          className="bg-purple-600 hover:active:bg-purple-700 rounded-lg text-base text-white px-4 py-2.5">Sign
+                          className="bg-purple-600 hover:bg-purple-700 active:bg-purple-700 rounded-lg text-base text-white px-4 py-2.5">Sign
                         up</Link>
                 </div>
                 {isMenuShown
