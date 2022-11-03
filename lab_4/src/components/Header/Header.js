@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {Children, useState} from 'react';
 import {Link} from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import {AiOutlineClose, AiOutlineMenu} from "react-icons/ai";
@@ -13,7 +13,7 @@ const Header = () => {
     return (
         <header className="bg-gray-50 border-solid border-b border-[#F2F4F7]">
             <div
-                className="relative flex justify-between items-center w-full py-5 pr-6 pl-4 md:max-w-[1216px] md:mx-auto">
+                className="relative flex justify-between items-center w-full py-5 px-4 md:max-w-[1216px] md:mx-auto">
                 <div className="flex items-center">
                     <h1>
                         <Link to="/">
