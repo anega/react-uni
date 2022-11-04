@@ -1,4 +1,4 @@
-import React, {Children, useState} from 'react';
+import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import {AiOutlineClose, AiOutlineMenu} from "react-icons/ai";
