@@ -16,10 +16,10 @@ const PostListItem = ({post}) => {
                     <div
                         className="flex justify-between border border-solid border-white/50 bg-white/30 p-4 sm:p-6 text-white backdrop-blur-md align-start">
                         <div>
-                            <p className="text-sm font-semibold">Olivia Rhye</p>
+                            <p className="text-sm font-semibold">{post.author.name}</p>
                             <p className="text-sm">20 Jan 2022</p>
                         </div>
-                        <p className="text-sm font-semibold">Design</p>
+                        <p className="text-sm font-semibold">{post.category[0]}</p>
                     </div>
                 </div>
             </div>
