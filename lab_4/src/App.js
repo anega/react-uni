@@ -9,6 +9,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Layout/>}>
                 <Route index element={<Home/>}/>
+                <Route path="post/:id" element={<>test post</>}/>
                 <Route path="*" element={<NotFound/>}/>
             </Route>
         </Routes>
