@@ -1,0 +1,26 @@
+[
+  {
+    "id": "design",
+    "name": "Design"
+  },
+  {
+    "id": "product",
+    "name": "Product"
+  },
+  {
+    "id": "software-engineering",
+    "name": "Software Engineering"
+  },
+  {
+    "id": "customer-success",
+    "name": "Customer Success"
+  },
+  {
+    "id": "leadership",
+    "name": "Leadership"
+  },
+  {
+    "id": "management",
+    "name": "Management"
+  }
+]
