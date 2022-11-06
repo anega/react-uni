@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
-import postsList from '../../data/test.json';
-import {Outlet} from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import postsList from '../../data/posts-sorted.json';
+import {Outlet, useLocation} from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
 const Layout = () => {
+    const location = useLocation();
     const [searchStr, setSearchStr] = useState('');
     const handleSearch = (query) => setSearchStr(() => query);
     const posts = postsList.filter(post => {
@@ -12,10 +13,14 @@ const Layout = () => {
         return post.title.toLowerCase().includes(searchStr.toLowerCase()) && post;
     });
 
+    useEffect(() => {
+        setSearchStr('');
+    }, [location]);
+
     return (
         <>
             <Header/>
-            <Outlet context={{posts: posts, handleSearchChange: handleSearch}}/>
+            <Outlet context={{posts: posts, searchQuery: searchStr, handleSearchChange: handleSearch}}/>
             <Footer/>
         </>
     );

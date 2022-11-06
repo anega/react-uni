@@ -17,7 +17,7 @@ const Home = () => {
             />
             <div className="w-full md:max-w-[1216px] mt-16 md:mt-24 md:mx-auto px-4 ">
                 <div>
-                    <Search handleSearch={outletContext.handleSearchChange}/>
+                    <Search searchQuery={outletContext.searchQuery} handleSearch={outletContext.handleSearchChange}/>
                 </div>
                 <PostsList posts={outletContext.posts}/>
             </div>
