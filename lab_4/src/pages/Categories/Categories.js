@@ -3,9 +3,10 @@ import {NavLink, useOutletContext} from "react-router-dom";
 import categoriesData from '../../data/post-categories.json';
 import PageHero from "../../components/PageHero/PageHero";
 import PostsList from "../../components/PostsList/PostsList";
+import Search from "../../components/Search/Search";
 
 const Categories = () => {
-    const posts = useOutletContext();
+    const outletContext = useOutletContext();
 
     return (
         <>
@@ -16,6 +17,7 @@ const Categories = () => {
             />
             <div>
                 <aside>
+                    <Search handleSearch={outletContext.handleSearchChange}/>
                     <div>
                         <h4>Blog categories</h4>
                         <NavLink to="/categories">View all</NavLink>
@@ -24,7 +26,7 @@ const Categories = () => {
                         ))}
                     </div>
                 </aside>
-                <PostsList posts={posts}/>
+                <PostsList posts={outletContext.posts}/>
             </div>
         </>
     );
