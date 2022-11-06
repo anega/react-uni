@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import {FiArrowUpRight} from "react-icons/fi";
+import Moment from "react-moment";
 
 const PostListItem = ({post}) => {
     return (
@@ -17,7 +18,7 @@ const PostListItem = ({post}) => {
                         className="flex justify-between border border-solid border-white/50 bg-white/30 p-4 sm:p-6 text-white backdrop-blur-md align-start">
                         <div>
                             <p className="text-sm font-semibold">{post.author.name}</p>
-                            <p className="text-sm">20 Jan 2022</p>
+                            <Moment date={post.date} format={'DD MMM YYYY'} className="text-sm"/>
                         </div>
                         <p className="text-sm font-semibold">{post.category[0]}</p>
                     </div>
