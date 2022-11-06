@@ -7,15 +7,10 @@ const PostListItem = ({post}) => {
     return (
         <div className="mb-8 sm:mb-0 overflow-hidden border border-solid border-[#EAECF0] rounded-2xl">
             <div className="relative">
-                {/*<img src={post.image.preview} alt={`Image for ${post.title} post`}/>*/}
-                <img
-                    src="https://i.guim.co.uk/img/media/173c22d9644ca33a59296166b92a29f7e19a2cfa/0_452_4184_2510/master/4184.jpg?width=465&quality=85&dpr=1&s=none"
-                    alt=""
-                    className="w-full object-cover max-h-[240px] sm:max-h-[280px]"
-                />
+                <img src={post.image.preview} alt={`Image for ${post.title} post`}
+                     className="w-full object-cover max-h-[240px] sm:max-h-[280px]"/>
                 <div className="absolute inset-x-0 bottom-0 bg-post-img-text">
-                    <div
-                        className="flex justify-between border border-solid border-white/50 bg-white/30 p-4 sm:p-6 text-white backdrop-blur-md align-start">
+                    <div className="flex justify-between border border-solid border-white/50 bg-white/30 p-4 sm:p-6 text-white backdrop-blur-md align-start">
                         <div>
                             <p className="text-sm font-semibold">{post.author.name}</p>
                             <Moment date={post.date} format={'DD MMM YYYY'} className="text-sm"/>
