@@ -1,10 +1,10 @@
 import React from 'react';
-import {AiOutlineSearch} from "react-icons/ai";
+import {AiOutlineSearch} from 'react-icons/ai';
 
 const Search = ({searchQuery, handleSearch}) => {
     return (
-        <div className="relative">
-            <AiOutlineSearch className="absolute inset-y-1/2 left-3.5 -translate-y-1/2 text-gray-500"/>
+        <div className="relative mb-4 sm:mb-0">
+            <AiOutlineSearch size="18" className="absolute inset-y-1/2 left-3.5 -translate-y-1/2 text-gray-500"/>
             <input
                 value={searchQuery}
                 onChange={(event) => handleSearch(event.target.value)}
