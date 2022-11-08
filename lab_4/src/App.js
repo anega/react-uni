@@ -1,9 +1,10 @@
-import {Route, Routes} from "react-router-dom";
-import Layout from "./pages/Layout/Layout";
-import Home from "./pages/Home/Home";
-import NotFound from "./pages/NotFound/NotFound";
-import Categories from "./pages/Categories/Categories";
+import Layout from 'pages/Layout/Layout';
+import {Route, Routes} from 'react-router-dom';
 import './App.css';
+import Categories from './pages/Categories/Categories';
+import Home from './pages/Home/Home';
+import NotFound from './pages/NotFound';
+
 
 function App() {
     return (

@@ -1,9 +1,9 @@
 import React from 'react';
-import {NavLink, useOutletContext, useParams} from "react-router-dom";
+import {NavLink, useOutletContext, useParams} from 'react-router-dom';
+import PageHero from '../../components/PageHero/PageHero';
+import PostsList from '../../components/PostsList/PostsList';
+import Search from '../../components/Search/Search';
 import categoriesData from '../../data/post-categories.json';
-import PageHero from "../../components/PageHero/PageHero";
-import PostsList from "../../components/PostsList/PostsList";
-import Search from "../../components/Search/Search";
 
 const Categories = () => {
     const outletContext = useOutletContext();
@@ -30,7 +30,8 @@ const Categories = () => {
                         <h4>Blog categories</h4>
                         <NavLink to="/categories" className="p-2">View all</NavLink>
                         {categoriesData.map(category => (
-                            <NavLink key={category.id} to={`/categories/${category.id}`} className="p-2">{category.name}</NavLink>
+                            <NavLink key={category.id} to={`/categories/${category.id}`}
+                                     className="p-2">{category.name}</NavLink>
                         ))}
                     </div>
                 </aside>
