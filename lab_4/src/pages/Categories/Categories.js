@@ -1,5 +1,6 @@
 import React from 'react';
-import {NavLink, useOutletContext, useParams} from 'react-router-dom';
+import {useOutletContext, useParams} from 'react-router-dom';
+import CategoriesMenu from '../../components/CategoriesList/CategoriesMenu';
 import PageHero from '../../components/PageHero/PageHero';
 import PostsList from '../../components/PostsList/PostsList';
 import Search from '../../components/Search/Search';
@@ -23,17 +24,11 @@ const Categories = () => {
                 title="Resources and insights"
                 description="The latest industry news, interviews, technologies, and resources."
             />
-            <div>
-                <aside>
-                    <Search searchQuery={outletContext.searchQuery} handleSearch={outletContext.handleSearchChange}/>
-                    <div>
-                        <h4>Blog categories</h4>
-                        <NavLink to="/categories" className="p-2">View all</NavLink>
-                        {categoriesData.map(category => (
-                            <NavLink key={category.id} to={`/categories/${category.id}`}
-                                     className="p-2">{category.name}</NavLink>
-                        ))}
-                    </div>
+            <div className="w-full md:max-w-[1216px] md:mx-auto px-4 lg:flex">
+                <aside className="md:flex md:justify-between md:items-start lg:flex-col lg:justify-start md:mb-8 lg:w-[280px] lg:mr-16">
+                    <Search searchQuery={outletContext.searchQuery} handleSearch={outletContext.handleSearchChange}
+                            className="hidden md:block"/>
+                    <CategoriesMenu/>
                 </aside>
                 <PostsList posts={postsFilteredByCategory}/>
             </div>
