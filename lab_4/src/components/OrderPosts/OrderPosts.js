@@ -60,7 +60,7 @@ const OrderPosts = ({orderBy}) => {
     return (
         <Select options={options}
                 defaultValue={options[0]}
-                onChange={(option) => orderBy(option.value)}
+                onChange={({value}) => orderBy(value)}
                 components={{SingleValue, Option}}
                 isSearchable={false}
                 styles={selectStyles}/>
