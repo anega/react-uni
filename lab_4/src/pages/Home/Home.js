@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {useOutletContext} from 'react-router-dom';
 import OrderPosts from '../../components/OrderPosts/OrderPosts';
 import PageHero from '../../components/PageHero/PageHero';
@@ -7,6 +7,34 @@ import Search from '../../components/Search/Search';
 
 const Home = () => {
     const outletContext = useOutletContext();
+    const [postsOrder, setPostsOrder] = useState('asc');
+    let orderedPosts = [];
+
+    const handlePostsOrder = (order) => {
+        setPostsOrder(() => order);
+    };
+
+    useEffect(() => {
+        switch (postsOrder) {
+            case 'asc':
+                orderedPosts = [...outletContext.posts];
+                break;
+            case 'desc':
+                orderedPosts = [...outletContext.posts]
+                    .sort((postA, postB) => postA.date > postB.date ? 1 : -1);
+                break;
+            case 'az':
+                orderedPosts = [...outletContext.posts]
+                    .sort((postA, postB) => postA.title > postB.title ? 1 : -1);
+                break;
+            case 'za':
+                orderedPosts = [...outletContext.posts]
+                    .sort((postA, postB) => postA.title > postB.title ? -1 : 1);
+                break;
+            default:
+                orderedPosts = [...outletContext.posts];
+        }
+    }, [postsOrder]);
 
     return (
         <>
@@ -19,9 +47,9 @@ const Home = () => {
             <div className="w-full md:max-w-[1216px] mt-16 md:mt-24 md:mx-auto px-4 ">
                 <div className="sm:flex sm:justify-between">
                     <Search searchQuery={outletContext.searchQuery} handleSearch={outletContext.handleSearchChange}/>
-                    <OrderPosts/>
+                    <OrderPosts orderBy={handlePostsOrder}/>
                 </div>
-                <PostsList posts={outletContext.posts}/>
+                <PostsList posts={orderedPosts}/>
             </div>
         </>
     );

@@ -14,12 +14,12 @@ const options = [
         icon: <AiOutlineArrowUp className="inline-block mr-2 mb-0.5" color="#667085" size="18"/>
     },
     {
-        value: 'abc',
+        value: 'az',
         label: 'Ascending by title',
         icon: <AiOutlineSortAscending className="inline-block mr-2 mb-0.5" color="#667085" size="18"/>
     },
     {
-        value: 'cba',
+        value: 'za',
         label: 'Descending by title',
         icon: <AiOutlineSortDescending className="inline-block mr-2 mb-0.5" color="#667085" size="18"/>
     },
@@ -56,10 +56,11 @@ const selectStyles = {
     }),
 };
 
-const OrderPosts = () => {
+const OrderPosts = ({orderBy}) => {
     return (
         <Select options={options}
                 defaultValue={options[0]}
+                onChange={(option) => orderBy(option.value)}
                 components={{SingleValue, Option}}
                 isSearchable={false}
                 styles={selectStyles}/>
