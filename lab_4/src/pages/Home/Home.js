@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {useOutletContext} from 'react-router-dom';
 import OrderPosts from '../../components/OrderPosts/OrderPosts';
 import PageHero from '../../components/PageHero/PageHero';
@@ -8,33 +8,31 @@ import Search from '../../components/Search/Search';
 const Home = () => {
     const outletContext = useOutletContext();
     const [postsOrder, setPostsOrder] = useState('asc');
-    let orderedPosts = [...outletContext.posts];
+    let orderedPosts;
 
     const handlePostsOrder = (order) => {
         setPostsOrder(() => order);
     };
 
-    useEffect(() => {
-        switch (postsOrder) {
-            case 'asc':
-                orderedPosts = [...outletContext.posts];
-                break;
-            case 'desc':
-                orderedPosts = [...outletContext.posts]
-                    .sort((postA, postB) => postA.date > postB.date ? 1 : -1);
-                break;
-            case 'az':
-                orderedPosts = [...outletContext.posts]
-                    .sort((postA, postB) => postA.title > postB.title ? 1 : -1);
-                break;
-            case 'za':
-                orderedPosts = [...outletContext.posts]
-                    .sort((postA, postB) => postA.title > postB.title ? -1 : 1);
-                break;
-            default:
-                orderedPosts = [...outletContext.posts];
-        }
-    }, [postsOrder]);
+    switch (postsOrder) {
+        case 'asc':
+            orderedPosts = [...outletContext.posts];
+            break;
+        case 'desc':
+            orderedPosts = [...outletContext.posts]
+                .sort((postA, postB) => postA.date > postB.date ? 1 : -1);
+            break;
+        case 'az':
+            orderedPosts = [...outletContext.posts]
+                .sort((postA, postB) => postA.title > postB.title ? 1 : -1);
+            break;
+        case 'za':
+            orderedPosts = [...outletContext.posts]
+                .sort((postA, postB) => postA.title > postB.title ? -1 : 1);
+            break;
+        default:
+            orderedPosts = [...outletContext.posts];
+    }
 
     return (
         <>
