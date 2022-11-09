@@ -1,5 +1,9 @@
 [
   {
+    "id": "all",
+    "name": "View all"
+  },
+  {
     "id": "design",
     "name": "Design"
   },
