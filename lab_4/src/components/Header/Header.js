@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
+import {AiOutlineClose, AiOutlineMenu} from 'react-icons/ai';
 import {Link} from 'react-router-dom';
 import logo from '../../assets/logo.png';
-import {AiOutlineClose, AiOutlineMenu} from "react-icons/ai";
 
 const Header = () => {
     const [isMenuShown, setIsMenuHidden] = useState(false);
@@ -10,6 +10,7 @@ const Header = () => {
         setIsMenuHidden((prevState) => !prevState);
     }
 
+    // TODO: hide mobile menu on route change
     return (
         <header className="bg-gray-50 border-solid border-b border-[#F2F4F7]">
             <div
