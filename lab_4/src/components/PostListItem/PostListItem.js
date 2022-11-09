@@ -15,7 +15,7 @@ const PostListItem = ({post}) => {
                             <p className="text-sm font-semibold">{post.author.name}</p>
                             <Moment date={post.date} format={'DD MMM YYYY'} className="text-sm"/>
                         </div>
-                        <p className="text-sm font-semibold">{post.category[0]}</p>
+                        <p className="text-sm font-semibold">{post.category[0].name}</p>
                     </div>
                 </div>
             </div>
@@ -24,7 +24,7 @@ const PostListItem = ({post}) => {
                     <Link to={`/post/${post.id}`}
                           className="inline-block first-letter:capitalize text-xl sm:text-2xl text-[#101828] hover:text-black active:text-black font-semibold cursor-pointer hover:underline active:underline">{post.title}</Link>
                 </h1>
-                <p className="mb-6 text-base text-[#475467]">{post.body.substring(0, 120)}{post.body.length >= 20 && '...'}</p>
+                <p className="mb-6 text-base text-[#475467]">{post.body.replace(/<[^>]+>/g, '').substring(0, 120)}{post.body.length >= 20 && '...'}</p>
                 <Link to={`/post/${post.id}`}
                       className="text-base font-semibold text-purple-600 hover:text-purple-800 hover:underline active:text-purple-800 active:underline">Read
                     post<FiArrowUpRight size="18" className="mb-1 ml-1 inline-block"/></Link>

@@ -14,7 +14,7 @@ const Categories = () => {
     });
     const postsFilteredByCategory = outletContext.posts.filter(post => {
         if (!urlParams.categoryName) return post;
-        return post.category.includes(currentCategoryName.name) && post;
+        return post.category.some((category) => category.name === currentCategoryName.name) && post;
     });
 
     return (
