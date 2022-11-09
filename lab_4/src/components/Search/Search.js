@@ -1,9 +1,9 @@
 import React from 'react';
 import {AiOutlineSearch} from 'react-icons/ai';
 
-const Search = ({searchQuery, handleSearch}) => {
+const Search = ({searchQuery, handleSearch, className}) => {
     return (
-        <div className="relative mb-4 sm:mb-0">
+        <div className={`relative mb-4 sm:mb-0 ${className}`}>
             <AiOutlineSearch size="18" className="absolute inset-y-1/2 left-3.5 -translate-y-1/2 text-gray-500"/>
             <input
                 value={searchQuery}
