@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Outlet, useLocation} from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
 import postsList from '../../data/posts-sorted.json';
 
 const Layout = () => {
@@ -18,11 +19,11 @@ const Layout = () => {
     }, [location]);
 
     return (
-        <>
+        <ScrollToTop>
             <Header/>
             <Outlet context={{posts: posts, searchQuery: searchStr, handleSearchChange: handleSearch}}/>
             <Footer/>
-        </>
+        </ScrollToTop>
     );
 };
 
