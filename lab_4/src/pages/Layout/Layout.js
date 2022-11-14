@@ -12,7 +12,6 @@ const Layout = () => {
     const handleSearch = (query) => setSearchStr(() => query);
     const debouncedSearchQuery = useDebounce(searchStr, 400);
     const posts = postsList.filter(post => {
-        console.log('running filter for search');
         if (debouncedSearchQuery === '') return post;
         return post.title.toLowerCase().includes(debouncedSearchQuery.toLowerCase()) && post;
     });
