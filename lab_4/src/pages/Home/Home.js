@@ -1,9 +1,12 @@
-import React, {useState} from 'react';
+import React, {useMemo, useState} from 'react';
 import {useOutletContext} from 'react-router-dom';
 import OrderPosts from '../../components/OrderPosts/OrderPosts';
 import PageHero from '../../components/PageHero/PageHero';
 import PostsList from '../../components/PostsList/PostsList';
 import Search from '../../components/Search/Search';
+import Pagination from '../../components/Pagination';
+
+let PageSize = 10;
 
 const Home = () => {
     const outletContext = useOutletContext();
@@ -34,6 +37,14 @@ const Home = () => {
             orderedPosts = [...outletContext.posts];
     }
 
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const currentPostsData = useMemo(() => {
+        const firstPageIndex = (currentPage - 1) * PageSize;
+        const lastPageIndex = firstPageIndex + PageSize;
+        return orderedPosts.slice(firstPageIndex, lastPageIndex);
+    }, [orderedPosts, currentPage]);
+
     return (
         <>
             <PageHero
@@ -47,7 +58,14 @@ const Home = () => {
                     <Search searchQuery={outletContext.searchQuery} handleSearch={outletContext.handleSearchChange}/>
                     <OrderPosts orderBy={handlePostsOrder}/>
                 </div>
-                <PostsList posts={orderedPosts}/>
+                <PostsList posts={currentPostsData}/>
+                <Pagination
+                    className="pagination-bar"
+                    currentPage={currentPage}
+                    totalCount={orderedPosts.length}
+                    pageSize={PageSize}
+                    onPageChange={page => setCurrentPage(page)}
+                />
             </div>
         </>
     );
