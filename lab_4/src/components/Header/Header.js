@@ -4,10 +4,14 @@ import {Link} from 'react-router-dom';
 import logo from '../../assets/logo.png';
 
 const Header = () => {
-    const [isMenuShown, setIsMenuHidden] = useState(false);
+    const [isMenuShown, setIsMenuShown] = useState(false);
 
-    function handleDropdownMenu() {
-        setIsMenuHidden((prevState) => !prevState);
+    const handleDropdownMenu = () => {
+        setIsMenuShown((prevState) => !prevState);
+    }
+
+    const hideMenuOnRouteChange = () => {
+        setIsMenuShown(false);
     }
 
     // TODO: hide mobile menu on route change
@@ -33,12 +37,16 @@ const Header = () => {
                         {[['Home', '/'], ['Categories', 'categories'], ['Testlink', '/']].map(([title, href], index) => (
                             <Link key={index}
                                   to={href}
+                                  onClick={hideMenuOnRouteChange}
                                   className="border-b border-solid border-gray-100 py-2 pr-6 pl-4 text-base active:bg-gray-200">{title}</Link>
                         ))}
                         <Link to="/"
+                              onClick={hideMenuOnRouteChange}
                               className="border-b border-solid border-gray-100 py-2 pr-6 pl-4 text-base active:bg-gray-200">Log
                             in</Link>
-                        <Link to="/" className="py-2 pr-6 pl-4 text-base active:bg-gray-200">Sign up</Link>
+                        <Link to="/"
+                              onClick={hideMenuOnRouteChange}
+                              className="py-2 pr-6 pl-4 text-base active:bg-gray-200">Sign up</Link>
                     </nav>
                 </div>
                 <div className="hidden md:block">
