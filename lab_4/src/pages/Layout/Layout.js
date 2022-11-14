@@ -4,14 +4,17 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
 import postsList from '../../data/posts-sorted.json';
+import {useDebounce} from '../../hooks/useDebounce';
 
 const Layout = () => {
     const location = useLocation();
     const [searchStr, setSearchStr] = useState('');
     const handleSearch = (query) => setSearchStr(() => query);
+    const debouncedSearchQuery = useDebounce(searchStr, 400);
     const posts = postsList.filter(post => {
-        if (searchStr === '') return post;
-        return post.title.toLowerCase().includes(searchStr.toLowerCase()) && post;
+        console.log('running filter for search');
+        if (debouncedSearchQuery === '') return post;
+        return post.title.toLowerCase().includes(debouncedSearchQuery.toLowerCase()) && post;
     });
 
     useEffect(() => {
