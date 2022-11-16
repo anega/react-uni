@@ -13,6 +13,7 @@ module.exports = {
       },
       boxShadow: {
         'bigbox': '0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03)',
+        'pagination-btn': '0px 1px 2px rgba(16, 24, 40, 0.05)',
       },
     },
   },
