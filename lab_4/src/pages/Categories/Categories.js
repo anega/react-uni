@@ -42,7 +42,7 @@ const Categories = () => {
                                 className="hidden md:block"/>
                         <CategoriesMenu/>
                     </aside>
-                    <PostsList posts={currentPostsData}/>
+                    <PostsList posts={currentPostsData} className="sm:grid-cols-2"/>
                 </div>
                 <Pagination
                     currentPage={outletContext.currentPage}

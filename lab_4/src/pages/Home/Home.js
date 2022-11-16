@@ -51,7 +51,7 @@ const Home = () => {
                     <Search searchQuery={outletContext.searchQuery} handleSearch={outletContext.handleSearchChange}/>
                     <OrderPosts orderBy={handlePostsOrder}/>
                 </div>
-                <PostsList posts={currentPostsData}/>
+                <PostsList posts={currentPostsData} className="sm:grid-cols-2"/>
                 <Pagination
                     currentPage={outletContext.currentPage}
                     totalCount={orderedPosts.length}
