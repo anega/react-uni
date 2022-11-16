@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {useNavigate, useParams} from 'react-router-dom';
+import {Link, useNavigate, useParams} from 'react-router-dom';
 import PageHero from '../../components/PageHero/PageHero';
 import postsList from 'data/posts-sorted.json';
 import Moment from 'react-moment';
@@ -27,12 +27,13 @@ const Post = () => {
                 </p>
                 <h1 className="mb-2 font-semibold text-xl text-[#101828] first-letter:capitalize">{post.title}</h1>
                 <div dangerouslySetInnerHTML={{__html: post.body}}
-                     className="mb-6 text-base text-[#475467]"/>
+                     className="mb-6 text-base text-[#475467] [&>p]:mt-2"/>
                 <div>
                     {post.category.map((category, index) => (
-                        <p key={index}
-                           className="inline-block mr-2 px-2.5 py-0.5 rounded-2xl font-medium text-sm"
-                           style={{background: category.background, color: category.color}}>{category.name}</p>
+                        <Link key={index}
+                              to={`/categories/${category.name.replace(/\s+/g, '-').toLowerCase()}`}
+                              className="inline-block mr-2 px-2.5 py-0.5 rounded-2xl font-medium text-sm hover:underline"
+                              style={{background: category.background, color: category.color}}>{category.name}</Link>
                     ))}
                 </div>
             </div>
