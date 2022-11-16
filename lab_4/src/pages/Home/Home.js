@@ -64,6 +64,7 @@ const Home = () => {
                         window.scrollTo({
                             top: contentRef.current.getBoundingClientRect().top + window.scrollY,
                             left: 0,
+                            behavior: 'smooth',
                         });
                         setCurrentPage(page);
                     }}
