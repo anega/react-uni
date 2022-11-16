@@ -6,6 +6,8 @@ import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
 import postsList from '../../data/posts-sorted.json';
 import {useDebounce} from '../../hooks/useDebounce';
 
+const postsPerPage = 8;
+
 const Layout = () => {
     const location = useLocation();
     const [searchStr, setSearchStr] = useState('');
@@ -23,7 +25,12 @@ const Layout = () => {
     return (
         <ScrollToTop>
             <Header/>
-            <Outlet context={{posts: posts, searchQuery: searchStr, handleSearchChange: handleSearch}}/>
+            <Outlet context={{
+                posts: posts,
+                postsPerPage: postsPerPage,
+                searchQuery: searchStr,
+                handleSearchChange: handleSearch
+            }}/>
             <Footer/>
         </ScrollToTop>
     );

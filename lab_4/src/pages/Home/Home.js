@@ -6,8 +6,6 @@ import PostsList from '../../components/PostsList/PostsList';
 import Search from '../../components/Search/Search';
 import Pagination from '../../components/Pagination';
 
-const pageSize = 8;
-
 const Home = () => {
     const outletContext = useOutletContext();
     const [postsOrder, setPostsOrder] = useState('asc');
@@ -36,8 +34,8 @@ const Home = () => {
     }, [postsOrder, outletContext.posts]);
 
     const currentPostsData = useMemo(() => {
-        const firstPageIndex = (currentPage - 1) * pageSize;
-        const lastPageIndex = firstPageIndex + pageSize;
+        const firstPageIndex = (currentPage - 1) * outletContext.postsPerPage;
+        const lastPageIndex = firstPageIndex + outletContext.postsPerPage;
         return orderedPosts.slice(firstPageIndex, lastPageIndex);
     }, [orderedPosts, currentPage]);
 
@@ -56,18 +54,11 @@ const Home = () => {
                 </div>
                 <PostsList posts={currentPostsData}/>
                 <Pagination
-                    className="pagination-bar"
                     currentPage={currentPage}
                     totalCount={orderedPosts.length}
-                    pageSize={pageSize}
-                    onPageChange={page => {
-                        window.scrollTo({
-                            top: contentRef.current.getBoundingClientRect().top + window.scrollY,
-                            left: 0,
-                            behavior: 'smooth',
-                        });
-                        setCurrentPage(page);
-                    }}
+                    pageSize={outletContext.postsPerPage}
+                    scrollToElement={contentRef}
+                    onPageChange={page => setCurrentPage(page)}
                 />
             </div>
         </>

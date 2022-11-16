@@ -9,7 +9,8 @@ export const Pagination = props => {
         totalCount,
         siblingCount = 1,
         currentPage,
-        pageSize
+        pageSize,
+        scrollToElement = false,
     } = props;
 
     const paginationRange = usePagination({
@@ -24,11 +25,22 @@ export const Pagination = props => {
     }
 
     const onNext = () => {
+        scrollOnPageChange(scrollToElement);
         onPageChange(currentPage + 1);
     };
 
     const onPrevious = () => {
+        scrollOnPageChange(scrollToElement);
         onPageChange(currentPage - 1);
+    };
+
+    const scrollOnPageChange = (refElement) => {
+        const offsetTopScroll = refElement && refElement.current.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+            top: offsetTopScroll ? offsetTopScroll : 0,
+            left: 0,
+            behavior: 'smooth',
+        });
     };
 
     let lastPage = paginationRange[paginationRange.length - 1];
@@ -54,7 +66,10 @@ export const Pagination = props => {
                     return (
                         <li key={index}
                             className={clsx(pageNumber === currentPage && 'bg-[#F9FAFB] text-[#1D2939]', pageNumber !== currentPage && 'text-[#475467]', 'w-10 h-10 flex justify-center items-center font-semibold text-sm cursor-pointer mx-px rounded-lg hover:bg-[#F9FAFB] hover:text-[#1D2939]')}
-                            onClick={() => onPageChange(pageNumber)}>{pageNumber}</li>
+                            onClick={() => {
+                                scrollOnPageChange(scrollToElement);
+                                return onPageChange(pageNumber);
+                            }}>{pageNumber}</li>
                     );
                 })}
             </ul>
