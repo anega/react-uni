@@ -9,7 +9,6 @@ import Pagination from '../../components/Pagination';
 const Home = () => {
     const outletContext = useOutletContext();
     const [postsOrder, setPostsOrder] = useState('asc');
-    const [currentPage, setCurrentPage] = useState(1);
     const contentRef = useRef();
 
     const handlePostsOrder = (order) => {
@@ -34,10 +33,10 @@ const Home = () => {
     }, [postsOrder, outletContext.posts]);
 
     const currentPostsData = useMemo(() => {
-        const firstPageIndex = (currentPage - 1) * outletContext.postsPerPage;
+        const firstPageIndex = (outletContext.currentPage - 1) * outletContext.postsPerPage;
         const lastPageIndex = firstPageIndex + outletContext.postsPerPage;
         return orderedPosts.slice(firstPageIndex, lastPageIndex);
-    }, [orderedPosts, currentPage]);
+    }, [orderedPosts, outletContext.currentPage]);
 
     return (
         <>
@@ -54,11 +53,11 @@ const Home = () => {
                 </div>
                 <PostsList posts={currentPostsData}/>
                 <Pagination
-                    currentPage={currentPage}
+                    currentPage={outletContext.currentPage}
                     totalCount={orderedPosts.length}
                     pageSize={outletContext.postsPerPage}
                     scrollToElement={contentRef}
-                    onPageChange={page => setCurrentPage(page)}
+                    onPageChange={page => outletContext.handleCurrentPage(page)}
                 />
             </div>
         </>

@@ -1,4 +1,4 @@
-import React, {useMemo, useRef, useState} from 'react';
+import React, {useMemo, useRef} from 'react';
 import {useOutletContext, useParams} from 'react-router-dom';
 import CategoriesMenu from '../../components/CategoriesList/CategoriesMenu';
 import PageHero from '../../components/PageHero/PageHero';
@@ -11,7 +11,6 @@ const Categories = () => {
     const outletContext = useOutletContext();
     const urlParams = useParams();
     const contentRef = useRef();
-    const [currentPage, setCurrentPage] = useState(1);
 
     const currentCategoryName = categoriesData.find(category => {
         if (category.id === urlParams.categoryName) return category.name;
@@ -23,10 +22,10 @@ const Categories = () => {
     });
 
     const currentPostsData = useMemo(() => {
-        const firstPageIndex = (currentPage - 1) * outletContext.postsPerPage;
+        const firstPageIndex = (outletContext.currentPage - 1) * outletContext.postsPerPage;
         const lastPageIndex = firstPageIndex + outletContext.postsPerPage;
         return postsFilteredByCategory.slice(firstPageIndex, lastPageIndex);
-    }, [postsFilteredByCategory, currentPage]);
+    }, [postsFilteredByCategory, outletContext.currentPage]);
 
     return (
         <>
@@ -46,10 +45,11 @@ const Categories = () => {
                     <PostsList posts={currentPostsData}/>
                 </div>
                 <Pagination
-                    currentPage={currentPage}
+                    currentPage={outletContext.currentPage}
                     totalCount={postsFilteredByCategory.length}
                     pageSize={outletContext.postsPerPage}
-                    onPageChange={page => setCurrentPage(page)}
+                    scrollToElement={contentRef}
+                    onPageChange={page => outletContext.handleCurrentPage(page)}
                 />
             </div>
         </>
