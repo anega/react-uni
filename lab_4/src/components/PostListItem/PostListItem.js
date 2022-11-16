@@ -15,7 +15,7 @@ const PostListItem = ({post}) => {
                             <p className="text-sm font-semibold">{post.author.name}</p>
                             <Moment date={post.date} format={'DD MMM YYYY'} className="text-sm"/>
                         </div>
-                        <p className="text-sm font-semibold">{post.category[0].name}</p>
+                        <p className="text-sm font-semibold text-right">{post.category[0].name}</p>
                     </div>
                 </div>
             </div>
