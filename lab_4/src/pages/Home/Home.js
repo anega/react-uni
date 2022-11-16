@@ -1,4 +1,4 @@
-import React, {useMemo, useState} from 'react';
+import React, {useMemo, useRef, useState} from 'react';
 import {useOutletContext} from 'react-router-dom';
 import OrderPosts from '../../components/OrderPosts/OrderPosts';
 import PageHero from '../../components/PageHero/PageHero';
@@ -6,11 +6,13 @@ import PostsList from '../../components/PostsList/PostsList';
 import Search from '../../components/Search/Search';
 import Pagination from '../../components/Pagination';
 
-let PageSize = 10;
+const pageSize = 8;
 
 const Home = () => {
     const outletContext = useOutletContext();
     const [postsOrder, setPostsOrder] = useState('asc');
+    const [currentPage, setCurrentPage] = useState(1);
+    const contentRef = useRef();
     let orderedPosts;
 
     const handlePostsOrder = (order) => {
@@ -37,11 +39,9 @@ const Home = () => {
             orderedPosts = [...outletContext.posts];
     }
 
-    const [currentPage, setCurrentPage] = useState(1);
-
     const currentPostsData = useMemo(() => {
-        const firstPageIndex = (currentPage - 1) * PageSize;
-        const lastPageIndex = firstPageIndex + PageSize;
+        const firstPageIndex = (currentPage - 1) * pageSize;
+        const lastPageIndex = firstPageIndex + pageSize;
         return orderedPosts.slice(firstPageIndex, lastPageIndex);
     }, [orderedPosts, currentPage]);
 
@@ -53,7 +53,7 @@ const Home = () => {
                 title="Untitled blog"
                 description="Tool and strategies modern teams need to help their companies grow."
             />
-            <div className="w-full md:max-w-[1216px] mt-16 md:mt-24 md:mx-auto px-4">
+            <div ref={contentRef} className="w-full md:max-w-[1216px] mt-16 md:mt-24 md:mx-auto px-4">
                 <div className="sm:flex sm:justify-between mb-12">
                     <Search searchQuery={outletContext.searchQuery} handleSearch={outletContext.handleSearchChange}/>
                     <OrderPosts orderBy={handlePostsOrder}/>
@@ -63,8 +63,14 @@ const Home = () => {
                     className="pagination-bar"
                     currentPage={currentPage}
                     totalCount={orderedPosts.length}
-                    pageSize={PageSize}
-                    onPageChange={page => setCurrentPage(page)}
+                    pageSize={pageSize}
+                    onPageChange={page => {
+                        window.scrollTo({
+                            top: contentRef.current.getBoundingClientRect().top + window.scrollY,
+                            left: 0,
+                        });
+                        setCurrentPage(page);
+                    }}
                 />
             </div>
         </>
