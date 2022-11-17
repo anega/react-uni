@@ -22,7 +22,7 @@ const PostListItem = ({post}) => {
             <div className="px-6 pt-6 pb-8 sm:px-6 sm:py-8">
                 <h1 className="mb-2">
                     <Link to={`/post/${post.id}`}
-                          className="inline-block first-letter:capitalize text-xl sm:text-2xl text-[#101828] hover:text-black active:text-black font-semibold cursor-pointer hover:underline active:underline">{post.title}</Link>
+                          className="block first-letter:capitalize truncate text-xl sm:text-2xl text-[#101828] hover:text-black active:text-black font-semibold cursor-pointer hover:underline active:underline">{post.title}</Link>
                 </h1>
                 <p className="mb-6 text-base text-[#475467]">{post.body.replace(/<[^>]+>/g, '').substring(0, 120)}{post.body.length >= 20 && '...'}</p>
                 <Link to={`/post/${post.id}`}

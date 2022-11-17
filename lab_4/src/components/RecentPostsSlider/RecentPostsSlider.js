@@ -51,7 +51,7 @@ const RecentPostsSlider = () => {
                 </div>
                 <Link to="/" className="hidden md:inline-block mx-4 py-3 px-5 text-center text-base text-white font-semibold bg-purple-600 hover:bg-purple-700 active:bg-purple-700 rounded-lg">View all posts</Link>
             </div>
-            <div className="relative mt-12 pl-4 md:pl-0 pb-12 md:pb-24 recent-posts-slider">
+            <div className="relative mt-12 md:pl-0 pb-12 md:pb-24 recent-posts-slider">
                 <Slider {...recentPostsSliderSettings}>
                     {resentPosts.map(post => (
                         <div key={post.id}>

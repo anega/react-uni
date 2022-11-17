@@ -56,7 +56,8 @@ const Post = () => {
                         ))}
                     </div>
                 </article>
-                <div ref={contentRef}>
+                <div>
+                    <div ref={contentRef}></div>
                     <PostsList posts={currentPostsData} className="sm:grid-cols-2 lg:grid-cols-3 sm:mt-16"/>
                     <Pagination
                         currentPage={currentPage}
