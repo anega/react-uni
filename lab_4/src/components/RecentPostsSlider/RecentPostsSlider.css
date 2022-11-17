@@ -1,0 +1,33 @@
+@media screen and (min-width: 1216px) {
+    .recent-posts-slider {
+        margin-left: calc(50vw - 608px);
+    }
+}
+
+@media screen and (max-width: 1215px) {
+    .recent-posts-slider {
+        margin-left: 1rem;
+    }
+}
+
+.recent-posts-slider .slick-slider {
+    padding-bottom: 70px;
+}
+
+.recent-posts-slider .slick-arrow {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+}
+
+.recent-posts-slider .slick-arrow:before {
+    content: none;
+}
+
+.recent-posts-slider .slick-prev {
+    left: 0;
+}
+
+.recent-posts-slider .slick-next {
+    left: 64px;
+}
