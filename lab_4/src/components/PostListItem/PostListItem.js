@@ -8,7 +8,7 @@ const PostListItem = ({post}) => {
         <div className="mb-8 sm:mb-0 overflow-hidden border border-solid border-[#EAECF0] rounded-2xl">
             <div className="relative">
                 <img src={post.image.preview} alt={`${post.title} post`}
-                     className="w-full object-cover max-h-[240px] sm:max-h-[280px]"/>
+                     className="w-full object-cover max-h-[240px] sm:max-h-[280px] min-h-[180px]"/>
                 <div className="absolute inset-x-0 bottom-0 bg-post-img-text">
                     <div className="flex justify-between border border-solid border-white/50 bg-white/30 p-4 sm:p-6 text-white backdrop-blur-md align-start">
                         <div>
