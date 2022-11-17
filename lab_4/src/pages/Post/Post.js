@@ -2,9 +2,10 @@ import React, {useEffect, useMemo, useRef, useState} from 'react';
 import {Link, useNavigate, useParams} from 'react-router-dom';
 import Moment from 'react-moment';
 import PageHero from '../../components/PageHero/PageHero';
-import postsList from 'data/posts-sorted.json';
 import PostsList from '../../components/PostsList/PostsList';
 import Pagination from '../../components/Pagination';
+import RecentPostsSlider from '../../components/RecentPostsSlider/RecentPostsSlider';
+import postsList from 'data/posts-sorted.json';
 
 const postsPerPage = 6;
 
@@ -32,7 +33,7 @@ const Post = () => {
                       title="Resources and insights"
                       description="The latest industry news, interviews, technologies, and resources."
                       className="text-center"/>
-            <div className="w-full md:max-w-[1216px] mt-4 md:mt-8 md:mx-auto px-4">
+            <div className="w-full md:max-w-[1216px] mt-4 md:mt-8 mb-16 md:mx-auto px-4">
                 <article>
                     <img src={post.image.full} alt={post.title} className="w-full block mb-6"/>
                     <p className="mb-2 font-semibold text-sm text-[#6941C6]">{post.author.name} • <Moment
@@ -56,7 +57,7 @@ const Post = () => {
                     </div>
                 </article>
                 <div ref={contentRef}>
-                    <PostsList posts={currentPostsData} className="sm:grid-cols-2 md:grid-cols-3 sm:mt-16"/>
+                    <PostsList posts={currentPostsData} className="sm:grid-cols-2 lg:grid-cols-3 sm:mt-16"/>
                     <Pagination
                         currentPage={currentPage}
                         totalCount={relatedPosts.length}
@@ -66,6 +67,7 @@ const Post = () => {
                     />
                 </div>
             </div>
+            <RecentPostsSlider/>
         </>
     );
 };
