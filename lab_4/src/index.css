@@ -14,8 +14,4 @@
     .post-preview-first-page:first-child .post-preview-text {
         @apply sm:max-w-[280px];
     }
-
-    /*.post-preview:first-child .post-preview-text h1 a {*/
-    /*    @apply whitespace-normal*/
-    /*}*/
 }
