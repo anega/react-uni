@@ -8,7 +8,14 @@ import Pagination from '../../components/Pagination';
 import categoriesData from '../../data/post-categories.json';
 
 export const Categories = () => {
-    const outletContext = useOutletContext();
+    const {
+        posts,
+        currentPage,
+        handleCurrentPage,
+        postsPerPage,
+        searchQuery,
+        handleSearchChange
+    } = useOutletContext();
     const urlParams = useParams();
     const contentRef = useRef();
 
@@ -16,23 +23,19 @@ export const Categories = () => {
         if (category.id === urlParams.categoryName) return category.name;
     });
 
-    const postsFilteredByCategory = outletContext.posts.filter(post => {
+    const postsFilteredByCategory = posts.filter(post => {
         if (!urlParams.categoryName) return post;
         return post.category.some((category) => category.name === currentCategoryName.name) && post;
     });
 
     const currentPostsData = useMemo(() => {
-        let firstPageIndex, lastPageIndex;
-        if (outletContext.currentPage === 1) {
-            firstPageIndex = (outletContext.currentPage - 1) * (outletContext.postsPerPage + 1);
-            lastPageIndex = firstPageIndex + outletContext.postsPerPage + 1;
-        } else {
-            firstPageIndex = (outletContext.currentPage - 1) * outletContext.postsPerPage + 1;
-            lastPageIndex = firstPageIndex + outletContext.postsPerPage;
-        }
+        const firstPageIndex = (currentPage - 1) * (postsPerPage + 1);
+        const lastPageIndex = currentPage === 1 ?
+            firstPageIndex + postsPerPage + 1 :
+            firstPageIndex + postsPerPage;
 
         return postsFilteredByCategory.slice(firstPageIndex, lastPageIndex);
-    }, [postsFilteredByCategory, outletContext.currentPage]);
+    }, [postsFilteredByCategory, currentPage]);
 
     return (
         <>
@@ -45,18 +48,18 @@ export const Categories = () => {
                 <div ref={contentRef} className="lg:flex">
                     <aside
                         className="md:flex md:justify-between md:items-start lg:flex-col lg:justify-start md:mb-8 lg:w-[280px] lg:mr-16">
-                        <Search searchQuery={outletContext.searchQuery} handleSearch={outletContext.handleSearchChange}
+                        <Search searchQuery={searchQuery} handleSearch={handleSearchChange}
                                 className="hidden md:block"/>
                         <CategoriesMenu/>
                     </aside>
                     <PostsList posts={currentPostsData} className="sm:grid-cols-2"/>
                 </div>
                 <Pagination
-                    currentPage={outletContext.currentPage}
+                    currentPage={currentPage}
                     totalCount={postsFilteredByCategory.length}
-                    pageSize={parseInt(outletContext.currentPage) === 1 ? outletContext.postsPerPage + 1 : outletContext.postsPerPage}
+                    pageSize={postsPerPage}
                     scrollToElement={contentRef}
-                    onPageChange={page => outletContext.handleCurrentPage(page)}
+                    onPageChange={page => handleCurrentPage(page)}
                 />
             </div>
         </>
