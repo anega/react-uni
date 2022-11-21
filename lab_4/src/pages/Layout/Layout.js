@@ -8,7 +8,7 @@ import {useDebounce} from '../../hooks/useDebounce';
 
 const postsPerPage = 8;
 
-const Layout = () => {
+export const Layout = () => {
     const location = useLocation();
     const [currentPage, setCurrentPage] = useState(1);
     const [searchStr, setSearchStr] = useState('');
@@ -44,5 +44,3 @@ const Layout = () => {
         </ScrollToTop>
     );
 };
-
-export default Layout;

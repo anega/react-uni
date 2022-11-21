@@ -6,7 +6,7 @@ import PostsList from '../../components/PostsList/PostsList';
 import Search from '../../components/Search/Search';
 import Pagination from '../../components/Pagination';
 
-const Home = () => {
+export const Home = () => {
     const outletContext = useOutletContext();
     const [postsOrder, setPostsOrder] = useState('asc');
     const contentRef = useRef();
@@ -63,5 +63,3 @@ const Home = () => {
         </>
     );
 };
-
-export default Home;

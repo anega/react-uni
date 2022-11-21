@@ -9,7 +9,7 @@ import postsList from 'data/posts-sorted.json';
 
 const postsPerPage = 6;
 
-const Post = () => {
+export const Post = () => {
     const navigate = useNavigate();
     const {id} = useParams();
     const contentRef = useRef();
@@ -72,5 +72,3 @@ const Post = () => {
         </>
     );
 };
-
-export default Post;

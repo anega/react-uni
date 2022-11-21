@@ -4,10 +4,10 @@ import CategoriesMenu from '../../components/CategoriesList/CategoriesMenu';
 import PageHero from '../../components/PageHero/PageHero';
 import PostsList from '../../components/PostsList/PostsList';
 import Search from '../../components/Search/Search';
-import categoriesData from '../../data/post-categories.json';
 import Pagination from '../../components/Pagination';
+import categoriesData from '../../data/post-categories.json';
 
-const Categories = () => {
+export const Categories = () => {
     const outletContext = useOutletContext();
     const urlParams = useParams();
     const contentRef = useRef();
@@ -55,5 +55,3 @@ const Categories = () => {
         </>
     );
 };
-
-export default Categories;
