@@ -29,10 +29,14 @@ export const Categories = () => {
     });
 
     const currentPostsData = useMemo(() => {
-        const firstPageIndex = (currentPage - 1) * (postsPerPage + 1);
-        const lastPageIndex = currentPage === 1 ?
-            firstPageIndex + postsPerPage + 1 :
-            firstPageIndex + postsPerPage;
+        let firstPageIndex, lastPageIndex;
+        if (currentPage === 1) {
+            firstPageIndex = (currentPage - 1) * (postsPerPage + 1);
+            lastPageIndex = firstPageIndex + postsPerPage + 1;
+        } else {
+            firstPageIndex = (currentPage - 1) * postsPerPage + 1;
+            lastPageIndex = firstPageIndex + postsPerPage;
+        }
 
         return postsFilteredByCategory.slice(firstPageIndex, lastPageIndex);
     }, [postsFilteredByCategory, currentPage]);
@@ -56,7 +60,7 @@ export const Categories = () => {
                 </div>
                 <Pagination
                     currentPage={currentPage}
-                    totalCount={postsFilteredByCategory.length}
+                    totalCount={postsFilteredByCategory.length - 1}
                     pageSize={postsPerPage}
                     scrollToElement={contentRef}
                     onPageChange={page => handleCurrentPage(page)}
