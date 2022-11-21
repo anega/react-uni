@@ -2,13 +2,14 @@ import React from 'react';
 import {FiArrowUpRight} from 'react-icons/fi';
 import Moment from 'react-moment';
 import {Link} from 'react-router-dom';
+import clsx from 'clsx';
 
-const PostListItem = ({post}) => {
+const PostListItem = ({post, currentPage, leadingPostWrapperClass}) => {
     return (
-        <div className="mb-8 sm:mb-0 overflow-hidden border border-solid border-[#EAECF0] rounded-2xl">
+        <div className={clsx(currentPage === 1 && 'post-preview-first-page', leadingPostWrapperClass, 'mb-8', 'sm:mb-0', 'overflow-hidden', 'border', 'border-solid', 'border-[#EAECF0]', 'rounded-2xl')}>
             <div className="relative">
                 <img src={post.image.preview} alt={`${post.title} post`}
-                     className="w-full object-cover max-h-[240px] sm:max-h-[280px] min-h-[180px]"/>
+                     className="object-cover w-full sm:max-w-[560px] sm:h-full min-h-[180px]"/>
                 <div className="absolute inset-x-0 bottom-0 bg-post-img-text">
                     <div className="flex justify-between border border-solid border-white/50 bg-white/30 p-4 sm:p-6 text-white backdrop-blur-md align-start">
                         <div>
@@ -19,7 +20,7 @@ const PostListItem = ({post}) => {
                     </div>
                 </div>
             </div>
-            <div className="px-6 pt-6 pb-8 sm:px-6 sm:py-8">
+            <div className="post-preview-text px-6 pt-6 pb-8 sm:px-6 sm:py-8">
                 <h1 className="mb-2">
                     <Link to={`/post/${post.id}`}
                           className="block first-letter:capitalize truncate text-xl sm:text-2xl text-[#101828] hover:text-black active:text-black font-semibold cursor-pointer hover:underline active:underline">{post.title}</Link>

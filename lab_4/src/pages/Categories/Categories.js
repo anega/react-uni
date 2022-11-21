@@ -1,5 +1,6 @@
 import React, {useMemo, useRef} from 'react';
 import {useOutletContext, useParams} from 'react-router-dom';
+import clsx from 'clsx';
 import CategoriesMenu from '../../components/CategoriesList/CategoriesMenu';
 import PageHero from '../../components/PageHero/PageHero';
 import PostsList from '../../components/PostsList/PostsList';
@@ -56,7 +57,10 @@ export const Categories = () => {
                                 className="hidden md:block"/>
                         <CategoriesMenu/>
                     </aside>
-                    <PostsList posts={currentPostsData} className="sm:grid-cols-2"/>
+                    <PostsList posts={currentPostsData}
+                               currentPage={currentPage}
+                               className="sm:grid-cols-2"
+                               leadingPostWrapperClass={clsx(currentPage === 1 && ['sm:first:flex', 'sm:first:flex-row', 'sm:first:col-span-full'])}/>
                 </div>
                 <Pagination
                     currentPage={currentPage}
