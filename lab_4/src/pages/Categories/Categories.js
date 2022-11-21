@@ -22,8 +22,15 @@ export const Categories = () => {
     });
 
     const currentPostsData = useMemo(() => {
-        const firstPageIndex = (outletContext.currentPage - 1) * outletContext.postsPerPage;
-        const lastPageIndex = firstPageIndex + outletContext.postsPerPage;
+        let firstPageIndex, lastPageIndex;
+        if (outletContext.currentPage === 1) {
+            firstPageIndex = (outletContext.currentPage - 1) * (outletContext.postsPerPage + 1);
+            lastPageIndex = firstPageIndex + outletContext.postsPerPage + 1;
+        } else {
+            firstPageIndex = (outletContext.currentPage - 1) * outletContext.postsPerPage + 1;
+            lastPageIndex = firstPageIndex + outletContext.postsPerPage;
+        }
+
         return postsFilteredByCategory.slice(firstPageIndex, lastPageIndex);
     }, [postsFilteredByCategory, outletContext.currentPage]);
 
@@ -47,7 +54,7 @@ export const Categories = () => {
                 <Pagination
                     currentPage={outletContext.currentPage}
                     totalCount={postsFilteredByCategory.length}
-                    pageSize={outletContext.postsPerPage}
+                    pageSize={parseInt(outletContext.currentPage) === 1 ? outletContext.postsPerPage + 1 : outletContext.postsPerPage}
                     scrollToElement={contentRef}
                     onPageChange={page => outletContext.handleCurrentPage(page)}
                 />
