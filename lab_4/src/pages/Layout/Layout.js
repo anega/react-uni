@@ -26,7 +26,8 @@ export const Layout = () => {
     });
 
     useEffect(() => {
-        setSearchStr('');
+        if (searchStr !== '') setSearchStr('');
+        if (currentPage !== 1) handleCurrentPage(1);
     }, [location]);
 
     return (
