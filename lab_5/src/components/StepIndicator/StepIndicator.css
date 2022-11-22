@@ -1,5 +1,6 @@
 .step-indicator {
     display: flex;
+    margin-bottom: 80px;
 }
 
 .step {
