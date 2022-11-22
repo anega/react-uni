@@ -1,0 +1,20 @@
+.step-info {
+    margin-bottom: 32px;
+}
+
+.step-info h1 {
+    color: #242731;
+    font-family: Poppins, sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    margin: 0 0 16px;
+}
+
+.step-info p {
+    color: #575F6E;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+}
