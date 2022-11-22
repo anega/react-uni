@@ -2,7 +2,7 @@ import React from 'react';
 import Header from 'components/Header';
 import StepIndicator from 'components/StepIndicator';
 
-const Layout = () => {
+export const Layout = () => {
     return (
         <>
             <Header/>
@@ -24,5 +24,3 @@ const Layout = () => {
         </>
     );
 };
-
-export default Layout;
