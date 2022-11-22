@@ -1,0 +1,1 @@
+export {StepIndicator as default} from './StepIndicator';

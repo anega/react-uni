@@ -1,13 +1,14 @@
 import React from 'react';
 import Header from 'components/Header';
 import './App.css';
+import StepIndicator from './components/StepIndicator/StepIndicator';
 
 const App = () => {
     return (
         <>
             <Header/>
             <div>
-
+                <StepIndicator/>
                 <h1>Registration</h1>
                 <p>Fill in the registration data. It will take a couple of minutes. All you need is a phone number and
                     e-mail</p>

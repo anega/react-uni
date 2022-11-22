@@ -1,0 +1,35 @@
+.step-indicator {
+    display: flex;
+}
+
+.step {
+    background: white;
+    border: 1px solid var(--gray);
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    position: relative;
+}
+
+.step:not(:first-child) {
+    margin-left: 56px;
+}
+
+.step:not(:first-child):before {
+    background: var(--gray);
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -48px;
+    width: 40px;
+    height: 1px;
+}
+
+.step.active {
+    background: var(--blue);
+    border-color: var(--blue);
+}
+
+.step.active:not(:first-child):before {
+    background: var(--blue);
+}
