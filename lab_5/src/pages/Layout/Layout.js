@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from 'components/Header';
 import StepIndicator from 'components/StepIndicator';
+import './Layout.css';
 
 export const Layout = () => {
     return (
