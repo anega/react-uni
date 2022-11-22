@@ -1,0 +1,10 @@
+.header {
+    margin: 0 auto;
+    padding-top: 44px;
+    width: 100%;
+    max-width: 1308px;
+}
+
+.header-logo {
+    margin: 0;
+}
