@@ -1,15 +1,16 @@
 import React from 'react';
+import Header from 'components/Header';
+import './App.css';
 
 const App = () => {
     return (
-        <div>
-            <header>
-                <h1>logo</h1>
-                <div>form steps</div>
-            </header>
+        <>
+            <Header/>
             <div>
+
                 <h1>Registration</h1>
-                <p>Fill in the registration data. It will take a couple of minutes. All you need is a phone number and e-mail</p>
+                <p>Fill in the registration data. It will take a couple of minutes. All you need is a phone number and
+                    e-mail</p>
                 <form action="">
                     <div>step 1</div>
                     <div>step 2</div>
@@ -20,7 +21,7 @@ const App = () => {
                     <button>button</button>
                 </form>
             </div>
-        </div>
+        </>
     );
 };
 
