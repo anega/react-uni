@@ -1,0 +1,1 @@
+export {InfoMessage as default} from './InfoMessage';
