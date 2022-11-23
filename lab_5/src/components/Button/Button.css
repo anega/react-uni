@@ -1,0 +1,21 @@
+.outline-btn {
+    background: white;
+    border: 1px solid #BBBFC1;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    padding: 12px 24px;
+}
+
+.outline-btn:hover,
+.outline-btn:active {
+    border-color: var(--blue);
+    color: var(--blue);
+}
+
+.outline-btn:disabled {
+    background: #eaecef;
+}
