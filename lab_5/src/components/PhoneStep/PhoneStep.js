@@ -1,4 +1,5 @@
 import React, {useCallback} from 'react';
+import {Controller, useFormContext} from 'react-hook-form';
 import {PatternFormat} from 'react-number-format';
 import StepIndicator from '../StepIndicator';
 import StepInfo from '../StepInfo';
@@ -11,6 +12,7 @@ import './PhoneStep.css';
 import countryCodes from 'data/country-codes.json';
 
 export const PhoneStep = ({handleNextStep}) => {
+    const {control} = useFormContext();
     const countryCodesOptions = countryCodes.map((country) => {
         return {
             value: country.phone_code,
@@ -38,9 +40,24 @@ export const PhoneStep = ({handleNextStep}) => {
             <FieldGroup>
                 <p className="input-label">Enter your phone number</p>
                 <div className="phone-wrap">
-                    {/* TODO: handle with react-hook-form */}
-                    <CustomSelect options={countryCodesOptions} filter={customFilter}/>
-                    <PatternFormat  format="### ### ####" valueIsNumericString className="text-input"/>
+                    <Controller
+                        control={control}
+                        name="countryCode"
+                        defaultValue={countryCodesOptions[0].value}
+                        render={({field}) => (
+                            <CustomSelect onChange={field.onChange}
+                                          options={countryCodesOptions}
+                                          filter={customFilter}/>
+                        )}/>
+                    <Controller
+                        control={control}
+                        name="phoneNumber"
+                        render={({field}) => (
+                            <PatternFormat onChange={field.onChange}
+                                           format="### ### ####"
+                                           valueIsNumericString
+                                           className="text-input"/>
+                        )}/>
                 </div>
             </FieldGroup>
             <Button className="outline-btn" value="Send Code" onClick={handleNextStep}/>
