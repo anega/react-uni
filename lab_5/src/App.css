@@ -5,6 +5,20 @@
     --gray: #B9B9C4;
 }
 
+@media screen and (max-width: 504px) {
+    .container-px {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .container-px {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+}
+
 .input-label {
     color: #242426;
     font-family: Poppins, sans-serif;

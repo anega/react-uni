@@ -4,3 +4,11 @@
     margin: 32px 0;
     padding: 32px;
 }
+
+@media screen and (max-width: 504px) {
+    .field-group {
+        border: none;
+        border-radius: 0;
+        padding: 0;
+    }
+}

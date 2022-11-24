@@ -2,6 +2,12 @@
     margin-bottom: 32px;
 }
 
+@media screen and (max-width: 504px) {
+    .step-info {
+        text-align: center;
+    }
+}
+
 .step-info h1 {
     color: #242731;
     font-family: Poppins, sans-serif;

@@ -8,6 +8,7 @@ const selectStyles = {
     container: (provided, state) => ({
         ...provided,
         width: '80px',
+        minWidth: '80px',
         outline: 'none',
     }),
     control: (provided, state) => ({

@@ -11,6 +11,8 @@ import {MdLock, MdOutlineClose} from 'react-icons/md';
 import './PhoneStep.css';
 import countryCodes from 'data/country-codes.json';
 
+const formStep = 1;
+
 export const PhoneStep = ({handleNextStep}) => {
     const {control} = useFormContext();
     const countryCodesOptions = countryCodes.map((country) => {
@@ -28,8 +30,8 @@ export const PhoneStep = ({handleNextStep}) => {
     }, []);
 
     return (
-        <div>
-            <StepIndicator/>
+        <>
+            <StepIndicator formStep={formStep}/>
             <StepInfo
                 title="Registration"
                 description="Fill in the registration data. It will take a couple of minutes. All you need is a phone number and e-mail"/>
@@ -61,6 +63,6 @@ export const PhoneStep = ({handleNextStep}) => {
                 </div>
             </FieldGroup>
             <Button className="outline-btn" value="Send Code" onClick={handleNextStep}/>
-        </div>
+        </>
     );
 };

@@ -5,6 +5,13 @@
     max-width: 1308px;
 }
 
+@media screen and (max-width: 820px) {
+    .header {
+        margin: 0;
+        padding: 20px 24px;
+    }
+}
+
 .header-logo {
     margin: 0;
 }

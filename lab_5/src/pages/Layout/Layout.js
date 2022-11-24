@@ -28,7 +28,7 @@ export const Layout = () => {
     return (
         <>
             <Header/>
-            <div className="content">
+            <div className="content container-px">
                 <FormProvider {...methods}>
                     <form onSubmit={methods.handleSubmit(onSubmit)}>
                         {step === 0 && <PhoneStep handleNextStep={handleNextStep}/>}

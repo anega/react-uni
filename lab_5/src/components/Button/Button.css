@@ -10,6 +10,13 @@
     padding: 12px 24px;
 }
 
+@media screen and (max-width: 504px) {
+    .outline-btn {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
 .outline-btn:hover,
 .outline-btn:active {
     border-color: var(--blue);
