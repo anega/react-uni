@@ -41,12 +41,11 @@ const selectStyles = {
     }),
 };
 
-export const CustomSelect = ({options, filter}) => {
+export const CustomSelect = ({options, filter, onChange}) => {
     return (
         <Select options={options}
                 defaultValue={options[0]}
-                // onChange={({value}) => {
-                // }}
+                onChange={({value}) => onChange(value)}
                 components={{DropdownIndicator, Option, SingleValue}}
                 isSearchable={true}
                 filterOption={filter}
