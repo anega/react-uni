@@ -1,0 +1,11 @@
+.phone-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.phone-wrap input {
+    margin-left: 16px;
+    width: 100%;
+    max-width: 296px;
+}
