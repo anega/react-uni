@@ -63,7 +63,7 @@ export const PhoneStep = ({handleNextStep}) => {
                         )}/>
                 </div>
             </FieldGroup>
-            <Button buttonType="button" className="outline-btn" value="Send Code" onClick={() => handleNextStep(nextFormStep)}/>
+            <Button buttonType="button" className="btn outline-btn" value="Send Code" onClick={() => handleNextStep(nextFormStep)}/>
         </>
     );
 };

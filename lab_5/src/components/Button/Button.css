@@ -1,6 +1,4 @@
-.outline-btn {
-    background: white;
-    border: 1px solid #BBBFC1;
+.btn {
     border-radius: 4px;
     cursor: pointer;
     font-family: Poppins, sans-serif;
@@ -10,8 +8,19 @@
     padding: 12px 24px;
 }
 
+.outline-btn {
+    background: white;
+    border: 1px solid #BBBFC1;
+}
+
+.filled-btn {
+    background: var(--blue);
+    border: 1px solid var(--blue);
+    color: white;
+}
+
 @media screen and (max-width: 504px) {
-    .outline-btn {
+    .btn {
         display: block;
         margin: 0 auto;
     }
@@ -25,4 +34,10 @@
 
 .outline-btn:disabled {
     background: #eaecef;
+}
+
+.filled-btn:hover,
+.filled-btn:active {
+    background: white;
+    color: var(--blue);
 }

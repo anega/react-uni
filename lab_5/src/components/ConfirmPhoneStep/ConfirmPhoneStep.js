@@ -65,7 +65,7 @@ export const ConfirmPhoneStep = ({handleNextStep}) => {
                     </button>
                 </div>
             </div>
-            <Button buttonType="button" className="outline-btn" value="Confirm" onClick={() => handleNextStep(nextFormStep)}/>
+            <Button buttonType="button" className="btn outline-btn" value="Confirm" onClick={() => handleNextStep(nextFormStep)}/>
         </>
     );
 };
