@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 import {FormProvider, useForm} from 'react-hook-form';
 import Header from 'components/Header';
 import PhoneStep from '../../components/PhoneStep';
+import ConfirmPhoneStep from '../../components/ConfirmPhoneStep';
 import './Layout.css';
 
 export const Layout = () => {
     const methods = useForm();
-    const [step, setStep] = useState(0);
+    const [step, setStep] = useState(1);
     const [userData, setUserData] = useState({});
 
     const handleNextStep = () => {
@@ -31,8 +32,8 @@ export const Layout = () => {
             <div className="content container-px">
                 <FormProvider {...methods}>
                     <form onSubmit={methods.handleSubmit(onSubmit)}>
-                        {step === 0 && <PhoneStep handleNextStep={handleNextStep}/>}
-                        {step === 1 && <div>step 2</div>}
+                        {step === 1 && <PhoneStep handleNextStep={handleNextStep}/>}
+                        {step === 2 && <ConfirmPhoneStep handleNextStep={handleNextStep}/>}
                         <div>step 3</div>
                         <div>step 4</div>
                         <div>step 5</div>
