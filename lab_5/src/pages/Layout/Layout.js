@@ -3,6 +3,7 @@ import {FormProvider, useForm} from 'react-hook-form';
 import Header from 'components/Header';
 import PhoneStep from '../../components/PhoneStep';
 import ConfirmPhoneStep from '../../components/ConfirmPhoneStep';
+import EmailPassStep from '../../components/EmailPassStep';
 import './Layout.css';
 
 export const Layout = () => {
@@ -25,6 +26,7 @@ export const Layout = () => {
                     <form onSubmit={methods.handleSubmit(onSubmit)}>
                         {step === 1 && <PhoneStep handleNextStep={handleNextStep}/>}
                         {step === 2 && <ConfirmPhoneStep handleNextStep={handleNextStep}/>}
+                        {step === 3 && <EmailPassStep handleNextStep={handleNextStep}/>}
                         <div>step 3</div>
                         <div>step 4</div>
                         <div>step 5</div>
