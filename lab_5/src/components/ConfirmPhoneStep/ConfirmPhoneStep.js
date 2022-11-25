@@ -27,7 +27,13 @@ export const ConfirmPhoneStep = ({handleNextStep}) => {
         setConfirmationCode(code);
     };
 
-    useEffect(() => handleConfirmationCode(), []);
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            handleConfirmationCode();
+        }, 1200);
+
+        return () => clearTimeout(timeout);
+    }, []);
 
     return (
         <>
