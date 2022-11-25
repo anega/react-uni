@@ -45,3 +45,12 @@
 .text-input:active {
     border-bottom-color: var(--blue);
 }
+
+.field-description {
+    color: #575F6E;
+    font-family: Poppins, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    margin: 8px 0 0;
+}
