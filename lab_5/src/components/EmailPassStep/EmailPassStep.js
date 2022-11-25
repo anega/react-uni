@@ -3,6 +3,7 @@ import StepIndicator from '../StepIndicator';
 import StepInfo from '../StepInfo';
 import FieldGroup from '../FieldGroup';
 import Button from '../Button';
+import InfoFieldGroup from '../InfoFieldGroup';
 import {useFormContext} from 'react-hook-form';
 import {AiFillEye, AiFillEyeInvisible, AiOutlineCheck} from 'react-icons/ai';
 import './EmailPassStep.css';
@@ -25,10 +26,9 @@ export const EmailPassStep = ({handleNextStep}) => {
             <StepInfo
                 title="Registration"
                 description="Fill in the registration data. It will take a couple of minutes. All you need is a phone number and e-mail"/>
-            <FieldGroup className="confirmed-phone">
-                    <p>{phoneNumber}</p>
-                    <p className="is-phone-confirmed"><AiOutlineCheck/> Number confirmed</p>
-            </FieldGroup>
+            <InfoFieldGroup mainText={phoneNumber}
+                            label="Number confirmed"
+                            labelIcon={<AiOutlineCheck/>}/>
             <FieldGroup>
                 <div className="field-wrap">
                     <p className="input-label">Enter your email</p>
@@ -44,7 +44,8 @@ export const EmailPassStep = ({handleNextStep}) => {
                     </div>
                 </div>
             </FieldGroup>
-            <Button buttonType="button" className="btn filled-btn" value="Register Now" onClick={() => handleNextStep(nextFormStep)}/>
+            <Button buttonType="button" className="btn filled-btn" value="Register Now"
+                    onClick={() => handleNextStep(nextFormStep)}/>
         </>
     );
 };

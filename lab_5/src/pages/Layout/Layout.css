@@ -9,3 +9,9 @@
         margin-top: 48px;
     }
 }
+
+@media screen and (max-width: 504px) {
+    .content {
+        max-width: none;
+    }
+}

@@ -1,0 +1,45 @@
+.info-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+@media screen and (max-width: 504px) {
+    .info-group {
+        background: #EFF7FF;
+        margin-right: -24px;
+        margin-left: -24px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .info-group {
+        margin-right: -12px;
+        margin-left: -12px;
+    }
+}
+
+.info-group.field-group {
+    padding: 16px;
+}
+
+.info-group p {
+    margin: 0;
+}
+
+.info-group .info-main {
+    color: #242426;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-bottom: 8px;
+}
+
+.info-group .info-label {
+    color: #575F6E;
+    font-family: Poppins, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+}

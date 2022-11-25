@@ -3,8 +3,8 @@ import {Controller, useFormContext} from 'react-hook-form';
 import {PatternFormat} from 'react-number-format';
 import StepIndicator from '../StepIndicator';
 import StepInfo from '../StepInfo';
-import FieldGroup from '../FieldGroup';
 import Button from '../Button';
+import InfoFieldGroup from '../InfoFieldGroup';
 import {BsFillPencilFill} from 'react-icons/bs';
 import {IoMdRefresh} from 'react-icons/io';
 import './ConfirmPhoneStep.css';
@@ -41,13 +41,9 @@ export const ConfirmPhoneStep = ({handleNextStep}) => {
             <StepInfo
                 title="Registration"
                 description="Fill in the registration data. It will take a couple of minutes. All you need is a phone number and e-mail"/>
-            <FieldGroup className="confirm-phone">
-                <div>
-                    <p>{phoneNumber}</p>
-                    <p className="is-phone-confirmed">Number not confirmed yet</p>
-                </div>
-                <BsFillPencilFill color="#007AFF" size="18"/>
-            </FieldGroup>
+            <InfoFieldGroup mainText={phoneNumber}
+                            label="Number not confirmed yet"
+                            trailingIcon={<BsFillPencilFill color="#007AFF" size="18"/>}/>
             <div className="confirmation-code-wrap">
                 <p className="input-label">Confirmation code</p>
                 <div className="confirmation-code">
@@ -71,7 +67,8 @@ export const ConfirmPhoneStep = ({handleNextStep}) => {
                     </button>
                 </div>
             </div>
-            <Button buttonType="button" className="btn outline-btn" value="Confirm" onClick={() => handleNextStep(nextFormStep)}/>
+            <Button buttonType="button" className="btn outline-btn" value="Confirm"
+                    onClick={() => handleNextStep(nextFormStep)}/>
         </>
     );
 };
