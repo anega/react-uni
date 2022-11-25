@@ -10,6 +10,7 @@ import Button from '../Button';
 import {PatternFormat} from 'react-number-format';
 
 const formStep = 2;
+const nextFormStep = 3;
 
 export const ConfirmPhoneStep = ({handleNextStep}) => {
     const [confirmationCode ,setConfirmationCode] = useState('');
@@ -42,7 +43,7 @@ export const ConfirmPhoneStep = ({handleNextStep}) => {
             <div className="confirmation-code-wrap">
                 <p className="input-label">Confirmation code</p>
                 <div className="confirmation-code">
-                    <div>
+                    <div className="confirmation-field">
                         <PatternFormat format="# # # #"
                                        mask="—"
                                        value={confirmationCode}
@@ -56,7 +57,7 @@ export const ConfirmPhoneStep = ({handleNextStep}) => {
                     </button>
                 </div>
             </div>
-            <Button className="outline-btn" value="Confirm" onClick={handleNextStep}/>
+            <Button className="outline-btn" value="Confirm" onClick={() => handleNextStep(nextFormStep)}/>
         </>
     );
 };

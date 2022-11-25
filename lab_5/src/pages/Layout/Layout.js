@@ -8,22 +8,13 @@ import './Layout.css';
 export const Layout = () => {
     const methods = useForm();
     const [step, setStep] = useState(1);
-    const [userData, setUserData] = useState({});
 
-    const handleNextStep = () => {
-        const formData = methods.getValues();
-        setUserData((prevState) => ({
-            ...prevState,
-            formData,
-        }));
-        setStep((prevState) => prevState + 1);
+    const handleNextStep = (step) => {
+        setStep(step);
     };
 
     const onSubmit = (formData) => {
-        setUserData((prevState) => ({
-            ...prevState,
-            formData,
-        }));
+        console.log(formData)
     };
 
     return (

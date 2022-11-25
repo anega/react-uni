@@ -41,6 +41,10 @@ p.is-phone-confirmed {
     margin-bottom: 32px;
 }
 
+.confirmation-field {
+    width: 100%;
+}
+
 .confirmation-code-wrap .input-label {
     margin-bottom: 8px;
 }

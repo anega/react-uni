@@ -12,6 +12,7 @@ import './PhoneStep.css';
 import countryCodes from 'data/country-codes.json';
 
 const formStep = 1;
+const nextFormStep = 2;
 
 export const PhoneStep = ({handleNextStep}) => {
     const {control} = useFormContext();
@@ -62,7 +63,7 @@ export const PhoneStep = ({handleNextStep}) => {
                         )}/>
                 </div>
             </FieldGroup>
-            <Button className="outline-btn" value="Send Code" onClick={handleNextStep}/>
+            <Button className="outline-btn" value="Send Code" onClick={() => handleNextStep(nextFormStep)}/>
         </>
     );
 };
