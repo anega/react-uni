@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useFormContext} from 'react-hook-form';
 import StepIndicator from '../StepIndicator';
 import StepInfo from '../StepInfo';
@@ -12,8 +12,19 @@ import {PatternFormat} from 'react-number-format';
 const formStep = 2;
 
 export const ConfirmPhoneStep = ({handleNextStep}) => {
+    const [confirmationCode ,setConfirmationCode] = useState('');
     const {getValues} = useFormContext();
     const phoneNumber = getValues(['countryCode', 'phoneNumber']).join(' ');
+
+    const handleConfirmationCode = () => {
+        let i = 0;
+        let code = '';
+        while (i < 4) {
+            i++;
+            code = code + Math.floor(Math.random() * 10);
+        }
+        setConfirmationCode(code);
+    };
 
     return (
         <>
@@ -34,12 +45,13 @@ export const ConfirmPhoneStep = ({handleNextStep}) => {
                     <div>
                         <PatternFormat format="# # # #"
                                        mask="—"
+                                       value={confirmationCode}
                                        allowEmptyFormatting={true}
                                        valueIsNumericString
                                        className="text-input"/>
                         <p className="field-description">Confirm phone number with code from sms message</p>
                     </div>
-                    <button className="send-again">
+                    <button className="send-again" onClick={handleConfirmationCode}>
                         <IoMdRefresh color="#007AFF" size="18"/>Send again
                     </button>
                 </div>
