@@ -1,11 +1,27 @@
 .confirm-phone {
+    border: 1px solid #E2E4E5;
+    border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    padding: 16px;
 }
 
-.confirm-phone.field-group {
-    padding: 16px;
+@media screen and (max-width: 456px) {
+    .confirm-phone {
+        background: #EFF7FF;
+        border: none;
+        border-radius: 0;
+        margin-right: -24px;
+        margin-left: -24px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .confirm-phone {
+        margin-right: -12px;
+        margin-left: -12px;
+    }
 }
 
 .confirm-phone p {
