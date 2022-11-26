@@ -59,3 +59,25 @@
     line-height: 16px;
     margin: 8px 0 0;
 }
+
+.inline-checkbox input {
+    margin-right: 8px;
+}
+
+.inline-checkbox span {
+    color: #000;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.inline-checkbox a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+.inline-checkbox a:hover,
+.inline-checkbox a:active {
+    text-decoration: underline;
+}
