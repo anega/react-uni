@@ -9,7 +9,7 @@ import {BsFillPencilFill} from 'react-icons/bs';
 import {IoMdRefresh} from 'react-icons/io';
 import './ConfirmPhoneStep.css';
 
-const formStep = 2;
+const formIndicatorStep = 2;
 const nextFormStep = 3;
 
 export const ConfirmPhoneStep = ({handleNextStep}) => {
@@ -37,7 +37,7 @@ export const ConfirmPhoneStep = ({handleNextStep}) => {
 
     return (
         <>
-            <StepIndicator formStep={formStep}/>
+            <StepIndicator formStep={formIndicatorStep}/>
             <StepInfo
                 title="Registration"
                 description="Fill in the registration data. It will take a couple of minutes. All you need is a phone number and e-mail"/>

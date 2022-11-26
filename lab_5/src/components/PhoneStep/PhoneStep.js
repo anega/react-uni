@@ -11,7 +11,7 @@ import {MdLock, MdOutlineClose} from 'react-icons/md';
 import './PhoneStep.css';
 import countryCodes from 'data/country-codes.json';
 
-const formStep = 1;
+const formIndicatorStep = 1;
 const nextFormStep = 2;
 
 export const PhoneStep = ({handleNextStep}) => {
@@ -32,7 +32,7 @@ export const PhoneStep = ({handleNextStep}) => {
 
     return (
         <>
-            <StepIndicator formStep={formStep}/>
+            <StepIndicator formStep={formIndicatorStep}/>
             <StepInfo
                 title="Registration"
                 description="Fill in the registration data. It will take a couple of minutes. All you need is a phone number and e-mail"/>

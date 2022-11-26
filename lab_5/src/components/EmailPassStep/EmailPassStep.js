@@ -8,7 +8,7 @@ import {useFormContext} from 'react-hook-form';
 import {AiFillEye, AiFillEyeInvisible, AiOutlineCheck} from 'react-icons/ai';
 import './EmailPassStep.css';
 
-const formStep = 3;
+const formIndicatorStep = 3;
 const nextFormStep = 4;
 
 export const EmailPassStep = ({handleNextStep}) => {
@@ -22,7 +22,7 @@ export const EmailPassStep = ({handleNextStep}) => {
 
     return (
         <>
-            <StepIndicator formStep={formStep}/>
+            <StepIndicator formStep={formIndicatorStep}/>
             <StepInfo
                 title="Registration"
                 description="Fill in the registration data. It will take a couple of minutes. All you need is a phone number and e-mail"/>
