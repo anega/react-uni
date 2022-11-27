@@ -9,3 +9,22 @@
 .place-birth-wrap > div:nth-child(even) {
     margin-left: 16px;
 }
+
+.date-picker .react-datepicker__input-container input {
+    border: none;
+    border-bottom: 1px solid #E2E4E5;
+    color: #242426;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    padding: 8px 16px;
+    outline: none;
+    width: 100%;
+}
+
+.date-picker .react-datepicker__input-container :hover,
+.date-picker .react-datepicker__input-container :focus,
+.date-picker .react-datepicker__input-container :active {
+    border-bottom-color: var(--blue);
+}

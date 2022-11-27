@@ -1,6 +1,8 @@
 import React, {useCallback} from 'react';
 import {Controller, useFormContext} from 'react-hook-form';
 import {debounce} from 'lodash';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import {getCities, getCountries} from '../../services/LocationService';
 import StepIndicator from '../StepIndicator';
 import StepInfo from '../StepInfo';
@@ -97,7 +99,15 @@ export const PersonalDataStep = ({handleNextStep}) => {
                 </div>
                 <div className="field-wrap">
                     <p className="input-label">Date of birth</p>
-                    <input {...register('birth.date')} type="text" className="text-input"/>
+                    <Controller
+                        control={control}
+                        name="birth.date"
+                        render={({field}) => (
+                            <DatePicker wrapperClassName="date-picker"
+                                        selected={field.value}
+                                        dateFormat="dd.MM.yyyy"
+                                        onChange={field.onChange}/>
+                        )}/>
                 </div>
             </FieldGroup>
             <InfoFieldGroup mainText="123-45-678"
