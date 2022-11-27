@@ -45,7 +45,7 @@ export const PhoneStep = ({handleNextStep}) => {
                 <div className="phone-wrap">
                     <Controller
                         control={control}
-                        name="countryCode"
+                        name="phoneRegister.countryCode"
                         defaultValue={countryCodesOptions[0].value}
                         render={({field}) => (
                             <CustomSelect onChange={field.onChange}
@@ -54,7 +54,7 @@ export const PhoneStep = ({handleNextStep}) => {
                         )}/>
                     <Controller
                         control={control}
-                        name="phoneNumber"
+                        name="phoneRegister.phone"
                         render={({field}) => (
                             <PatternFormat onChange={field.onChange}
                                            format="### ### ####"

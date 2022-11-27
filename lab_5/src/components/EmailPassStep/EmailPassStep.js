@@ -13,7 +13,7 @@ const nextFormStep = 4;
 
 export const EmailPassStep = ({handleNextStep}) => {
     const {register, getValues} = useFormContext();
-    const phoneNumber = getValues(['countryCode', 'phoneNumber']).join(' ');
+    const phoneNumber = getValues(['phoneRegister.countryCode', 'phoneRegister.phone']).join(' ');
     const [showPassword, setShowPassword] = useState(false);
 
     const handleShowPassword = () => {
@@ -32,12 +32,12 @@ export const EmailPassStep = ({handleNextStep}) => {
             <FieldGroup>
                 <div className="field-wrap">
                     <p className="input-label">Enter your email</p>
-                    <input {...register} type="email" className="text-input"/>
+                    <input {...register('emailRegister')} type="email" className="text-input"/>
                 </div>
                 <div className="field-wrap">
                     <p className="input-label">Set a password</p>
                     <div className="password-wrap">
-                        <input {...register} type={showPassword ? 'text' : 'password'} className="text-input"/>
+                        <input {...register('password')} type={showPassword ? 'text' : 'password'} className="text-input"/>
                         {showPassword ?
                             <AiFillEyeInvisible size="24" color="#D4D4D4" onClick={handleShowPassword}/> :
                             <AiFillEye size="24" color="#D4D4D4" onClick={handleShowPassword}/>}

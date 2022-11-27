@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Controller, useFormContext} from 'react-hook-form';
+import {useFormContext} from 'react-hook-form';
 import {PatternFormat} from 'react-number-format';
 import StepIndicator from '../StepIndicator';
 import StepInfo from '../StepInfo';
@@ -14,8 +14,8 @@ const nextFormStep = 3;
 
 export const ConfirmPhoneStep = ({handleNextStep}) => {
     const [confirmationCode, setConfirmationCode] = useState('');
-    const {getValues, control} = useFormContext();
-    const phoneNumber = getValues(['countryCode', 'phoneNumber']).join(' ');
+    const {getValues} = useFormContext();
+    const phoneNumber = getValues(['phoneRegister.countryCode', 'phoneRegister.phone']).join(' ');
 
     const handleConfirmationCode = () => {
         let i = 0;
@@ -48,18 +48,13 @@ export const ConfirmPhoneStep = ({handleNextStep}) => {
                 <p className="input-label">Confirmation code</p>
                 <div className="confirmation-code">
                     <div className="confirmation-field">
-                        <Controller
-                            control={control}
-                            name="confirmPhoneNumber"
-                            render={() => {
-                                return <PatternFormat format="# # # #"
-                                                      mask="—"
-                                                      value={confirmationCode}
-                                                      defaultValue={confirmationCode}
-                                                      allowEmptyFormatting={true}
-                                                      valueIsNumericString
-                                                      className="text-input"/>
-                            }}/>
+                        <PatternFormat format="# # # #"
+                                       mask="—"
+                                       value={confirmationCode}
+                                       defaultValue={confirmationCode}
+                                       allowEmptyFormatting={true}
+                                       valueIsNumericString
+                                       className="text-input"/>
                         <p className="field-description">Confirm phone number with code from sms message</p>
                     </div>
                     <button type="button" className="send-again" onClick={handleConfirmationCode}>
