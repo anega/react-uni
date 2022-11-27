@@ -3,10 +3,6 @@
     justify-content: stretch;
 }
 
-.place-birth-wrap > div {
-    flex: 1;
-}
-
 .place-birth-wrap > div:nth-child(odd) {
     margin-right: 16px;
 }
