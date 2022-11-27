@@ -5,9 +5,10 @@ import StepInfo from '../StepInfo';
 import FieldGroupInfo from '../FieldGroupInfo';
 import FieldGroup from '../FieldGroup';
 import CustomSelect from '../CustomSelect';
+import Button from '../Button';
 import {BsLinkedin, BsTelephone} from 'react-icons/bs';
 import {HiOutlineEnvelope} from 'react-icons/hi2';
-import {AiFillSkype, AiOutlineGithub, AiOutlineInstagram, AiOutlinePlus} from 'react-icons/ai';
+import {AiFillSkype, AiOutlineArrowRight, AiOutlineGithub, AiOutlineInstagram, AiOutlinePlus} from 'react-icons/ai';
 import {FaFacebook} from 'react-icons/fa';
 import {CiCircleRemove} from 'react-icons/ci';
 import './ContactsStep.css';
@@ -42,7 +43,7 @@ const socialNetworkOptions = [
     }
 ];
 
-export const ContactsStep = () => {
+export const ContactsStep = ({handleNextStep}) => {
     const {register, control, getValues} = useFormContext();
     const {fields, append, remove} = useFieldArray({
         name: 'socialLinks',
@@ -86,16 +87,19 @@ export const ContactsStep = () => {
                                         control={control}
                                         render={({field}) => (
                                             <CustomSelect options={socialNetworkOptions}
+                                                          className="social-link-dropdown"
                                                           isSearchable={false}
                                                           onChange={field.onChange}/>
                                         )}/>
-                            <input {...register(`socialLinks.${index}.profileName`)}
-                                   type="text"
-                                   placeholder="@profile"
-                                   className="text-input"/>
-                            <button onClick={() => remove(index)} className="remove-soc-link">
-                                <CiCircleRemove size="24" color="#D4D4D4"/>
-                            </button>
+                            <div className="social-link-inner">
+                                <input {...register(`socialLinks.${index}.profileName`)}
+                                       type="text"
+                                       placeholder="@profile"
+                                       className="text-input"/>
+                                <button onClick={() => remove(index)} className="remove-soc-link">
+                                    <CiCircleRemove size="24" color="#D4D4D4"/>
+                                </button>
+                            </div>
                         </div>
                     ))}
                     <button type="button"
@@ -106,6 +110,9 @@ export const ContactsStep = () => {
                     </button>
                 </div>
             </FieldGroup>
+            <Button className="btn outline-btn" value="Go Next"
+                    icon={<AiOutlineArrowRight size="14" color="#242731"/>}
+                    onClick={() => handleNextStep(nextFormStep)}/>
         </>
     );
 };
