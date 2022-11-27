@@ -1,0 +1,15 @@
+.place-birth-wrap {
+    display: flex;
+    justify-content: stretch;
+}
+
+.place-birth-wrap > div {
+    flex: 1;
+}
+
+.place-birth-wrap > div:nth-child(odd) {
+    margin-right: 16px;
+}
+.place-birth-wrap > div:nth-child(even) {
+    margin-left: 16px;
+}
