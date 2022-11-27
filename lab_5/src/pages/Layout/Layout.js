@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import {FormProvider, useForm} from 'react-hook-form';
 import Header from 'components/Header';
+import PhoneStep from '../../components/PhoneStep';
 import ConfirmPhoneStep from '../../components/ConfirmPhoneStep';
 import EmailPassStep from '../../components/EmailPassStep';
 import PersonalDataStep from '../../components/PersonalDataStep';
 import './Layout.css';
-import PhoneStep from '../../components/PhoneStep';
 
 export const Layout = () => {
     const methods = useForm();
