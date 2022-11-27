@@ -14,10 +14,11 @@ const selectStyles = {
     }),
 };
 
-export const CustomSelect = ({options, filter, onChange, isSearchable = true}) => {
+export const CustomSelect = ({options, filter, onChange, isSearchable = true, className}) => {
     return (
         <Select options={options}
                 defaultValue={options[0]}
+                className={className}
                 onChange={({value}) => onChange(value)}
                 components={{DropdownIndicator, Option, SingleValue}}
                 isSearchable={isSearchable}
