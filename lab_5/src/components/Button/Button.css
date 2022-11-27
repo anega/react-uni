@@ -41,3 +41,7 @@
     background: white;
     color: var(--blue);
 }
+
+.btn-icon {
+    margin-left: 12px;
+}
