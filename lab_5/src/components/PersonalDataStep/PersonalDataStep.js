@@ -22,9 +22,9 @@ export const PersonalDataStep = ({handleNextStep}) => {
     const fetchCountries = async (inputValue) => {
         return await getCountries().then((res) => {
             return [...res.data]
-                .filter((country) => country.name.toLowerCase().includes(inputValue))
-                .map(country => ({value: country.name.toLowerCase(), label: country.name}))
-                .sort((a, b) => (a.value > b.value) ? 1 : ((b.value > a.value) ? -1 : 0));
+                .filter((country) => country.name.toLowerCase().includes(inputValue.toLowerCase()))
+                .map(country => ({value: country.Iso2, label: country.name}))
+                .sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
         });
     };
 
