@@ -1,13 +1,13 @@
 import React, {useCallback} from 'react';
 import {Controller, useFormContext} from 'react-hook-form';
 import {debounce} from 'lodash';
-import AsyncSelect from 'react-select/async';
 import {getCities, getCountries} from '../../services/LocationService';
 import StepIndicator from '../StepIndicator';
 import StepInfo from '../StepInfo';
 import FieldGroup from '../FieldGroup';
 import FieldGroupInfo from '../FieldGroupInfo';
 import InfoFieldGroup from '../InfoFieldGroup';
+import {CustomAsyncSelect} from '../CustomSelect/CustomAsyncSelect';
 import Button from '../Button';
 import {AiOutlineArrowRight, AiOutlineCheck} from 'react-icons/ai';
 import './PersonalDataStep.css';
@@ -80,22 +80,18 @@ export const PersonalDataStep = ({handleNextStep}) => {
                             control={control}
                             name="birth.country"
                             render={({field}) => (
-                                <AsyncSelect defaultOptions
-                                             cacheOptions
-                                             placeholder="Country"
-                                             onChange={field.onChange}
-                                             loadOptions={loadCountryOptions}/>
+                                <CustomAsyncSelect placeholder="Country"
+                                                   onChange={field.onChange}
+                                                   loadOptions={loadCountryOptions}/>
                             )}/>
                         <Controller
                             control={control}
                             name="birth.city"
                             render={({field}) => (
-                                <AsyncSelect key={JSON.stringify(country)}
-                                             defaultOptions
-                                             cacheOptions
-                                             placeholder="City"
-                                             onChange={field.onChange}
-                                             loadOptions={loadCityOptions}/>
+                                <CustomAsyncSelect componentKey={JSON.stringify(country)}
+                                                   placeholder="City"
+                                                   onChange={field.onChange}
+                                                   loadOptions={loadCityOptions}/>
                             )}/>
                     </div>
                 </div>
