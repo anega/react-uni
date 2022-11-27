@@ -59,7 +59,7 @@ export const PersonalDataStep = ({handleNextStep}) => {
                 title="Profile info"
                 description="Fill in the data for profile. It will take a couple of minutes. You only need a passport"/>
             <label htmlFor="terms" className="inline-checkbox">
-                <input id="terms" type="checkbox"/>
+                <input {...register('termsofuse')} id="terms" type="checkbox"/>
                 <span>I agree with <a href="https://www.google.com/" target="_blank"
                                       rel="noreferrer">Terms of use</a></span>
             </label>
