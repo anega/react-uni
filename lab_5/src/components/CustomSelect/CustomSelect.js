@@ -11,17 +11,16 @@ const selectStyles = {
         ...provided,
         width: '80px',
         minWidth: '80px',
-        outline: 'none',
     }),
 };
 
-export const CustomSelect = ({options, filter, onChange}) => {
+export const CustomSelect = ({options, filter, onChange, isSearchable = true}) => {
     return (
         <Select options={options}
                 defaultValue={options[0]}
                 onChange={({value}) => onChange(value)}
                 components={{DropdownIndicator, Option, SingleValue}}
-                isSearchable={true}
+                isSearchable={isSearchable}
                 filterOption={filter}
                 styles={selectStyles}/>
     );
