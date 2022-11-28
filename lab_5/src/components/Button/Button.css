@@ -26,8 +26,8 @@
     }
 }
 
-.outline-btn:hover,
-.outline-btn:active {
+.outline-btn:hover:not(:disabled),
+.outline-btn:active:not(:disabled) {
     border-color: var(--blue);
     color: var(--blue);
 }
