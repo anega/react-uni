@@ -42,6 +42,10 @@
     color: var(--blue);
 }
 
-.btn-icon {
+.btn-prefix-icon {
+    margin-right: 12px;
+}
+
+.btn-suffix-icon {
     margin-left: 12px;
 }
