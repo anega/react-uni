@@ -6,6 +6,7 @@ import ConfirmPhoneStep from '../../components/ConfirmPhoneStep';
 import EmailPassStep from '../../components/EmailPassStep';
 import PersonalDataStep from '../../components/PersonalDataStep';
 import ContactsStep from '../../components/ContactsStep';
+import AddressStep from '../../components/AddressStep';
 import './Layout.css';
 
 export const Layout = () => {
@@ -37,8 +38,7 @@ export const Layout = () => {
                         {step === 3 && <EmailPassStep handleNextStep={handleNextStep}/>}
                         {step === 4 && <PersonalDataStep handleNextStep={handleNextStep}/>}
                         {step === 5 && <ContactsStep handleNextStep={handleNextStep}/>}
-                        <div>step 6</div>
-                        <button type="submit">button</button>
+                        {step === 6 && <AddressStep/>}
                     </form>
                 </FormProvider>
             </div>
