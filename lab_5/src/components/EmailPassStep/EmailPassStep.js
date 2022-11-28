@@ -37,7 +37,7 @@ export const EmailPassStep = ({handleNextStep}) => {
                         required: 'Email cannot be empty.',
                         pattern: {
                             value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                            message: "Invalid email address"
+                            message: 'Invalid email address'
                         }
                     })} type="email" className="text-input"/>
                     {errors.emailRegister && <FormFieldError errorMessage={errors.emailRegister.message}/>}
@@ -45,11 +45,24 @@ export const EmailPassStep = ({handleNextStep}) => {
                 <div className="field-wrap">
                     <p className="input-label">Set a password</p>
                     <div className="password-wrap">
-                        <input {...register('password')} type={showPassword ? 'text' : 'password'} className="text-input"/>
+                        <input {...register('password', {
+                            required: 'Password cannot be empty.',
+                            minLength: {
+                                value: 6,
+                                message: 'Password must be at least 6 characters long.'
+                            },
+                            pattern: {
+                                value: /(?=.*?[0-9])(?=.*?[A-Za-z]).+/,
+                                message: 'Password must include at least one letter and one number.'
+                            }
+                        })}
+                               type={showPassword ? 'text' : 'password'}
+                               className="text-input"/>
                         {showPassword ?
                             <AiFillEyeInvisible size="24" color="#D4D4D4" onClick={handleShowPassword}/> :
                             <AiFillEye size="24" color="#D4D4D4" onClick={handleShowPassword}/>}
                     </div>
+                    {errors.password && <FormFieldError errorMessage={errors.password.message}/>}
                 </div>
             </FieldGroup>
             <Button className="btn filled-btn"
