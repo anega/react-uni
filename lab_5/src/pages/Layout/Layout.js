@@ -12,7 +12,6 @@ import './Layout.css';
 export const Layout = () => {
     const methods = useForm({
         reValidateMode: 'onChange',
-        shouldUseNativeValidation: true,
         shouldFocusError: true,
         defaultValues: {
             socialLinks: [{

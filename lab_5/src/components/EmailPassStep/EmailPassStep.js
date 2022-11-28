@@ -7,12 +7,13 @@ import InfoFieldGroup from '../InfoFieldGroup';
 import {useFormContext} from 'react-hook-form';
 import {AiFillEye, AiFillEyeInvisible, AiOutlineCheck} from 'react-icons/ai';
 import './EmailPassStep.css';
+import FormFieldError from '../FormFieldError';
 
 const formIndicatorStep = 3;
 const nextFormStep = 4;
 
 export const EmailPassStep = ({handleNextStep}) => {
-    const {register, getValues} = useFormContext();
+    const {register, getValues, formState: {errors, isDirty, isValid}} = useFormContext();
     const phoneNumber = getValues(['phoneRegister.countryCode', 'phoneRegister.phone']).join(' ');
     const [showPassword, setShowPassword] = useState(false);
 
@@ -32,7 +33,14 @@ export const EmailPassStep = ({handleNextStep}) => {
             <FieldGroup>
                 <div className="field-wrap">
                     <p className="input-label">Enter your email</p>
-                    <input {...register('emailRegister')} type="email" className="text-input"/>
+                    <input {...register('emailRegister', {
+                        required: 'Email cannot be empty.',
+                        pattern: {
+                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                            message: "Invalid email address"
+                        }
+                    })} type="email" className="text-input"/>
+                    {errors.emailRegister && <FormFieldError errorMessage={errors.emailRegister.message}/>}
                 </div>
                 <div className="field-wrap">
                     <p className="input-label">Set a password</p>
@@ -44,8 +52,11 @@ export const EmailPassStep = ({handleNextStep}) => {
                     </div>
                 </div>
             </FieldGroup>
-            <Button className="btn filled-btn" value="Register Now"
-                    onClick={() => handleNextStep(nextFormStep)}/>
+            <Button className="btn filled-btn"
+                    value="Register Now"
+                    onClick={() => {
+                        if (isValid && isDirty) handleNextStep(nextFormStep);
+                    }}/>
         </>
     );
 };

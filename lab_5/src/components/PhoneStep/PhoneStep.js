@@ -59,7 +59,7 @@ export const PhoneStep = ({handleNextStep}) => {
                         control={control}
                         name="phoneRegister.phone"
                         rules={{
-                            required: 'Phone number cannot be empty',
+                            required: 'Phone number cannot be empty.',
                             validate: {
                                 value: (value) => value.trim().length > 4 ||
                                     'Phone number must be at least 4 numbers long.'
