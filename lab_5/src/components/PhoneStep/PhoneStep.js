@@ -1,12 +1,14 @@
 import React, {useCallback} from 'react';
 import {Controller, useFormContext} from 'react-hook-form';
 import {PatternFormat} from 'react-number-format';
+import clsx from 'clsx';
 import StepIndicator from '../StepIndicator';
 import StepInfo from '../StepInfo';
 import InfoMessage from '../InfoMessage';
 import FieldGroup from '../FieldGroup';
 import CustomSelect from '../CustomSelect';
 import Button from '../Button';
+import FormFieldError from '../FormFieldError';
 import {MdLock, MdOutlineClose} from 'react-icons/md';
 import './PhoneStep.css';
 import countryCodes from 'data/country-codes.json';
@@ -15,7 +17,7 @@ const formIndicatorStep = 1;
 const nextFormStep = 2;
 
 export const PhoneStep = ({handleNextStep}) => {
-    const {control} = useFormContext();
+    const {control, formState: {errors, isValid, isDirty}} = useFormContext();
     const countryCodesOptions = countryCodes.map((country) => {
         return {
             value: country.phone_code,
@@ -47,6 +49,7 @@ export const PhoneStep = ({handleNextStep}) => {
                         control={control}
                         name="phoneRegister.countryCode"
                         defaultValue={countryCodesOptions[0].value}
+                        rules={{required: true}}
                         render={({field}) => (
                             <CustomSelect onChange={field.onChange}
                                           options={countryCodesOptions}
@@ -55,15 +58,27 @@ export const PhoneStep = ({handleNextStep}) => {
                     <Controller
                         control={control}
                         name="phoneRegister.phone"
+                        rules={{
+                            required: 'Phone number cannot be empty',
+                            validate: {
+                                value: (value) => value.trim().length > 4 ||
+                                    'Phone number must be at least 4 numbers long.'
+                            }
+                        }}
                         render={({field}) => (
                             <PatternFormat onChange={field.onChange}
                                            format="### ### ####"
                                            valueIsNumericString
-                                           className="text-input"/>
+                                           className={clsx('text-input', errors.phoneRegister && 'invalid')}/>
                         )}/>
                 </div>
+                {errors.phoneRegister && <FormFieldError errorMessage={errors.phoneRegister.phone.message}/>}
             </FieldGroup>
-            <Button className="btn outline-btn" value="Send Code" onClick={() => handleNextStep(nextFormStep)}/>
+            <Button className="btn outline-btn"
+                    value="Send Code"
+                    onClick={() => {
+                        if (isValid && isDirty) handleNextStep(nextFormStep);
+                    }}/>
         </>
     );
 };
