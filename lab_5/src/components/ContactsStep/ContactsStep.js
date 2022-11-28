@@ -110,7 +110,8 @@ export const ContactsStep = ({handleNextStep}) => {
                     </button>
                 </div>
             </FieldGroup>
-            <Button className="btn outline-btn" value="Go Next"
+            <Button className="btn outline-btn"
+                    value="Go Next"
                     icon={<AiOutlineArrowRight size="14" color="#242731"/>}
                     onClick={() => handleNextStep(nextFormStep)}/>
         </>

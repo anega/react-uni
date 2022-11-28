@@ -44,7 +44,7 @@ export const EmailPassStep = ({handleNextStep}) => {
                     </div>
                 </div>
             </FieldGroup>
-            <Button buttonType="button" className="btn filled-btn" value="Register Now"
+            <Button className="btn filled-btn" value="Register Now"
                     onClick={() => handleNextStep(nextFormStep)}/>
         </>
     );

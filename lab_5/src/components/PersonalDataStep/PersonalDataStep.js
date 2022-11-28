@@ -58,7 +58,8 @@ export const PersonalDataStep = ({handleNextStep}) => {
             <InfoFieldGroup mainText="123-45-678"
                             label="Your ITIN"
                             labelIcon={<AiOutlineCheck/>}/>
-            <Button className="btn outline-btn" value="Go Next"
+            <Button className="btn outline-btn"
+                    value="Go Next"
                     icon={<AiOutlineArrowRight size="14" color="#242731"/>}
                     onClick={() => handleNextStep(nextFormStep)}/>
         </>
