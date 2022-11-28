@@ -9,7 +9,7 @@ export const commonSelectStyles = {
         borderBottom: '1px solid #E2E4E5',
         borderRadius: 0,
         boxShadow: 'none',
-        padding: '9px 7px 9px 16px',
+        padding: '8px 7px 8px 16px',
         outline: 'none',
         '&:hover': {
             border: 'none',

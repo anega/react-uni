@@ -72,8 +72,6 @@ export const PersonalDataStep = ({handleNextStep}) => {
                     value="Go Next"
                     icon={<AiOutlineArrowRight size="14" color="#242731"/>}
                     onClick={() => {
-                        // console.log(isValid)
-                        // console.log(isDirty)
                         if (isValid && isDirty) handleNextStep(nextFormStep);
                     }}/>
         </>

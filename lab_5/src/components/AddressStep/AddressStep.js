@@ -7,11 +7,12 @@ import Button from '../Button';
 import FieldGroupInfo from '../FieldGroupInfo';
 import CountryCityFields from '../CountryCityFields';
 import {AiOutlineCheck} from 'react-icons/ai';
+import FormFieldError from '../FormFieldError';
 
 const formIndicatorStep = 3;
 
 export const AddressStep = () => {
-    const {register} = useFormContext();
+    const {register, formState: {errors}} = useFormContext();
 
     return (
         <>
@@ -23,18 +24,28 @@ export const AddressStep = () => {
                 <FieldGroupInfo title="Delivery address" label="Used for shipping orders"/>
                 <div className="field-wrap">
                     <p className="input-label">Address</p>
-                    <input {...register('address.address')} type="text" className="text-input"/>
+                    <input {...register('address', {
+                        required: 'Address field is required.'
+                    })}
+                           type="text"
+                           className="text-input"/>
+                    {errors.address && <FormFieldError errorMessage={errors.address.message}/>}
                 </div>
                 <CountryCityFields label="Location"
-                                   countryFieldName="address.country"
-                                   cityFieldName="address.city"/>
+                                   countryFieldName="addressCountry"
+                                   cityFieldName="addressCity"/>
                 <div className="field-wrap">
                     <p className="input-label">Zipcode</p>
-                    <input {...register('address.zip')} type="text" className="text-input"/>
+                    <input {...register('addressZip', {
+                        required: 'Zipcode field is required.'
+                    })}
+                           type="text"
+                           className="text-input"/>
+                    {errors.addressZip && <FormFieldError errorMessage={errors.addressZip.message}/>}
                 </div>
                 <div className="field-wrap">
                     <p className="input-label">Optional</p>
-                    <input {...register('address.optional')} type="text" className="text-input"/>
+                    <input {...register('addressOptional')} type="text" className="text-input"/>
                 </div>
             </FieldGroup>
             <Button buttonType="submit"
@@ -44,6 +55,3 @@ export const AddressStep = () => {
         </>
     );
 };
-
-
-// назву країни в обєкт а значенням міста
