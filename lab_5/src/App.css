@@ -45,6 +45,11 @@
     width: 100%;
 }
 
+.text-input:invalid,
+.text-input.invalid {
+    border-bottom-color: #ef4444 !important;
+}
+
 .text-input:hover,
 .text-input:focus,
 .text-input:active {
