@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React, {useState} from 'react';
 import {debounce} from 'lodash';
 import {Controller, useFormContext} from 'react-hook-form';
 import {getCities, getCountries} from '../../services/LocationService';
@@ -20,12 +20,9 @@ export const CountryCityFields = ({label, countryFieldName, cityFieldName}) => {
         });
     };
 
-    const loadCountryOptions = useCallback(
-        debounce((inputValue, callback) => {
-            fetchCountries(inputValue).then((options) => callback(options));
-        }, 1000),
-        []
-    );
+    const loadCountryOptions = debounce((inputValue, callback) => {
+        fetchCountries(inputValue).then((options) => callback(options));
+    }, 1000);
 
     const fetchCities = async (inputValue) => {
         const selectedCountryCode = country.value;
@@ -48,13 +45,10 @@ export const CountryCityFields = ({label, countryFieldName, cityFieldName}) => {
         })
     };
 
-    const loadCityOptions = useCallback(
-        debounce((inputValue, callback) => {
-            if (!country) return callback([]);
-            fetchCities(inputValue).then((options) => callback(options));
-        }, 1000),
-        [country]
-    );
+    const loadCityOptions = debounce((inputValue, callback) => {
+        if (!country) return callback([]);
+        fetchCities(inputValue).then((options) => callback(options));
+    }, 1000);
 
     return (
         <div className="field-wrap">
