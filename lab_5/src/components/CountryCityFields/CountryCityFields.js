@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react';
+import React, {useCallback, useState} from 'react';
 import {debounce} from 'lodash';
 import {Controller, useFormContext} from 'react-hook-form';
 import {getCities, getCountries} from '../../services/LocationService';
@@ -7,6 +7,7 @@ import FormFieldError from '../FormFieldError';
 import './CountryCityFields.css';
 
 export const CountryCityFields = ({label, countryFieldName, cityFieldName}) => {
+    const [cachedCities, setCachedCities] = useState({});
     const {watch, control, formState: {errors}} = useFormContext();
     const country = watch(countryFieldName);
 
@@ -27,11 +28,23 @@ export const CountryCityFields = ({label, countryFieldName, cityFieldName}) => {
     );
 
     const fetchCities = async (inputValue) => {
-        return await getCities(country.value).then((res) => {
-            return [...res.data]
+        const selectedCountryCode = country.value;
+        if (cachedCities.hasOwnProperty(selectedCountryCode)) {
+            return [...cachedCities[selectedCountryCode]]
+                .filter((city) => city.value.includes(inputValue));
+        }
+        return await getCities(selectedCountryCode).then((res) => {
+            const cities = [...res.data]
                 .filter((city) => city.toLowerCase().includes(inputValue))
                 .map(city => ({value: city.toLowerCase(), label: city}))
                 .sort((a, b) => (a.value > b.value) ? 1 : ((b.value > a.value) ? -1 : 0));
+            setCachedCities((prevState) => {
+                return {
+                    ...prevState,
+                    [selectedCountryCode]: cities,
+                };
+            });
+            return cities;
         })
     };
 
