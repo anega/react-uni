@@ -6,7 +6,7 @@ import clsx from 'clsx';
 
 const PostListItem = ({post, currentPage, leadingPostWrapperClass}) => {
     return (
-        <div className={clsx(currentPage === 1 && 'post-preview-first-page', leadingPostWrapperClass, 'mb-8', 'sm:mb-0', 'overflow-hidden', 'border', 'border-solid', 'border-[#EAECF0]', 'rounded-2xl')}>
+        <div className={clsx(currentPage === 1 && 'post-preview-first-page', leadingPostWrapperClass, 'mb-8', 'sm:mb-0', 'overflow-hidden', 'border', 'border-solid', 'border-gray-90', 'rounded-2xl')}>
             <div className="relative">
                 <img src={post.image.preview} alt={`${post.title} post`}
                      className="object-cover w-full sm:max-w-[560px] sm:h-full min-h-[180px]"/>
@@ -23,9 +23,9 @@ const PostListItem = ({post, currentPage, leadingPostWrapperClass}) => {
             <div className="post-preview-text px-6 pt-6 pb-8 sm:px-6 sm:py-8">
                 <h1 className="mb-2">
                     <Link to={`/post/${post.id}`}
-                          className="block first-letter:capitalize truncate text-xl sm:text-2xl text-[#101828] hover:text-black active:text-black font-semibold cursor-pointer hover:underline active:underline">{post.title}</Link>
+                          className="block first-letter:capitalize truncate text-xl sm:text-2xl text-blue-800 hover:text-black active:text-black font-semibold cursor-pointer hover:underline active:underline">{post.title}</Link>
                 </h1>
-                <p className="mb-6 text-base text-[#475467]">{post.body.replace(/<[^>]+>/g, '').substring(0, 120)}{post.body.length >= 20 && '...'}</p>
+                <p className="mb-6 text-base textgray-550">{post.body.replace(/<[^>]+>/g, '').substring(0, 120)}{post.body.length >= 20 && '...'}</p>
                 <Link to={`/post/${post.id}`}
                       className="text-base font-semibold text-purple-600 hover:text-purple-800 hover:underline active:text-purple-800 active:underline">Read
                     post<FiArrowUpRight size="18" className="mb-1 ml-1 inline-block"/></Link>

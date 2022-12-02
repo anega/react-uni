@@ -8,7 +8,7 @@ const Search = ({searchQuery, handleSearch, className}) => {
             <input
                 value={searchQuery}
                 onChange={(event) => handleSearch(event.target.value)}
-                className="w-full sm:max-w-[280px] py-2.5 pr-3.5 pl-10 border border-solid border-[#D0D5DD] rounded-lg outline-none text-base placeholder:text-base placeholder:text-[#667085]"
+                className="w-full sm:max-w-[280px] py-2.5 pr-3.5 pl-10 border border-solid bordergray-120 rounded-lg outline-none text-base placeholder:text-base placeholder:textgray-450"
                 type="text"
                 placeholder="Search"/>
         </div>

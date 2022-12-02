@@ -18,7 +18,7 @@ const Header = () => {
     }
 
     return (
-        <header className="bg-gray-50 border-solid border-b border-[#F2F4F7]">
+        <header className="bg-gray-50 border-solid border-b border-gray-60">
             <div
                 className="relative flex justify-between items-center w-full py-5 px-4 md:max-w-[1216px] md:mx-auto">
                 <div className="flex items-center">
