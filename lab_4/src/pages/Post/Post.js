@@ -36,14 +36,14 @@ export const Post = () => {
             <div className="w-full md:max-w-[1216px] mt-4 md:mt-8 mb-16 md:mx-auto px-4">
                 <article>
                     <img src={post.image.full} alt={post.title} className="w-full block mb-6"/>
-                    <p className="mb-2 font-semibold text-sm text-[#6941C6]">{post.author.name} • <Moment
+                    <p className="mb-2 font-semibold text-sm text-purple-600">{post.author.name} • <Moment
                         date={post.date}
                         format={'DD MMM YYYY'}
                         className="text-sm"/>
                     </p>
-                    <h1 className="mb-2 font-semibold text-xl text-[#101828] first-letter:capitalize">{post.title}</h1>
+                    <h1 className="mb-2 font-semibold text-xl text-blue-800 first-letter:capitalize">{post.title}</h1>
                     <div dangerouslySetInnerHTML={{__html: post.body}}
-                         className="mb-6 text-base text-[#475467] [&>p]:mt-2"/>
+                         className="mb-6 text-base textgray-550 [&>p]:mt-2"/>
                     <div>
                         {post.category.map((category, index) => (
                             <Link key={index}

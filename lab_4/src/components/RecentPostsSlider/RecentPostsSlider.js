@@ -42,11 +42,11 @@ const RecentPostsSlider = () => {
     const resentPosts = postsList.slice(0, 15);
 
     return (
-        <div className="bg-[#F9FAFB] pt-16 md:pt-24">
+        <div className="bg-gray-80 pt-16 md:pt-24">
             <div className="flex justify-between items-start w-full md:max-w-[1216px] md:mx-auto px-4">
                 <div>
-                    <h3 className="mb-4 text-3xl text-[#101828] font-semibold">Latest writings</h3>
-                    <p className="text-lg text-[#475467]">The latest news, technologies, and resources from our
+                    <h3 className="mb-4 text-3xl text-blue-800 font-semibold">Latest writings</h3>
+                    <p className="text-lg textgray-550">The latest news, technologies, and resources from our
                         team.</p>
                 </div>
                 <Link to="/" className="hidden md:inline-block mx-4 py-3 px-5 text-center text-base text-white font-semibold bg-purple-600 hover:bg-purple-700 active:bg-purple-700 rounded-lg">View all posts</Link>

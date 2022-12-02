@@ -14,7 +14,7 @@ const options = categoriesData.map((category) => {
 const CategoriesMenu = () => {
     const navigate = useNavigate();
     const activeLinkClass = ({isActive}) => {
-        return clsx(isActive && 'text-[#344054] bg-[#F9FAFB]', 'block', 'rounded-md', 'py-2.5', 'pl-3.5', 'font-semibold', 'text-base', 'text-[#667085]', 'hover:text-[#344054]', 'hover:bg-[#F9FAFB]');
+        return clsx(isActive && 'text-blue-650 bg-gray-80', !isActive && 'textgray-450', 'block', 'rounded-md', 'py-2.5', 'pl-3.5', 'font-semibold', 'text-base', 'hover:text-blue-650', 'hover:bg-gray-80');
     }
 
     const handleCategorySelectChange = (value) => navigate(`/categories${value === 'all' ? '' : '/' + value}`)
@@ -22,7 +22,7 @@ const CategoriesMenu = () => {
     return (
         <>
             <div className="hidden lg:block lg:mt-8 lg:w-full">
-                <h4 className="mb-5 font-semibold text-sm text-[#6941C6]">Blog categories</h4>
+                <h4 className="mb-5 font-semibold text-sm text-purple-600">Blog categories</h4>
                 {categoriesData.map(category => (
                     <NavLink end
                              key={category.id}

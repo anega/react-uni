@@ -46,14 +46,14 @@ export const Pagination = props => {
     let lastPage = paginationRange[paginationRange.length - 1];
     return (
         <div
-            className="flex justify-between items-center mt-12 pt-4 md:pt-5 pb-16 md:pb-24 border-t border-solid border-[#EAECF0]">
+            className="flex justify-between items-center mt-12 pt-4 md:pt-5 pb-16 md:pb-24 border-t border-solid border-gray-90">
             <button disabled={currentPage === 1}
-                    className="disabled:bg-gray-50 cursor-pointer disabled:cursor-auto flex justify-between items-center p-3 md:pr-3.5 md:pl-4 md:py-2 text-[#344054] disabled:text-gray-400 border border-solid border-[#D0D5DD] rounded-lg shadow-pagination-btn active:shadow-none disabled:shadow-none"
+                    className="disabled:bg-gray-50 cursor-pointer disabled:cursor-auto flex justify-between items-center p-3 md:pr-3.5 md:pl-4 md:py-2 text-blue-650 disabled:text-gray-400 border border-solid bordergray-120 rounded-lg shadow-pagination-btn active:shadow-none disabled:shadow-none"
                     onClick={onPrevious}>
                 <AiOutlineArrowLeft size="14" color={currentPage === 1 ? '#9CA38F' : '#344054'}/>
                 <span className="hidden md:block ml-3 text-sm font-semibold">Previous</span>
             </button>
-            <div className="md:hidden text-sm text-[#344054]">Page <span
+            <div className="md:hidden text-sm text-blue-650">Page <span
                 className="font-semibold">{currentPage}</span> of <span className="font-semibold">{lastPage}</span>
             </div>
             <ul className="hidden md:flex">
@@ -65,7 +65,7 @@ export const Pagination = props => {
 
                     return (
                         <li key={index}
-                            className={clsx(pageNumber === currentPage && 'bg-[#F9FAFB] text-[#1D2939]', pageNumber !== currentPage && 'text-[#475467]', 'w-10 h-10 flex justify-center items-center font-semibold text-sm cursor-pointer mx-px rounded-lg hover:bg-[#F9FAFB] hover:text-[#1D2939]')}
+                            className={clsx(pageNumber === currentPage && 'bg-gray-80 text-blue-750', pageNumber !== currentPage && 'textgray-550', 'w-10 h-10 flex justify-center items-center font-semibold text-sm cursor-pointer mx-px rounded-lg hover:bg-gray-80 hover:text-blue-750')}
                             onClick={() => {
                                 scrollOnPageChange(scrollToElement);
                                 return onPageChange(pageNumber);
@@ -74,7 +74,7 @@ export const Pagination = props => {
                 })}
             </ul>
             <button disabled={currentPage === lastPage}
-                    className="disabled:bg-gray-50 cursor-pointer disabled:cursor-auto flex justify-between items-center p-3 md:pl-3.5 md:pr-4 md:py-2 text-[#344054] disabled:text-gray-400 border border-solid border-[#D0D5DD] rounded-lg shadow-pagination-btn active:shadow-none disabled:shadow-none"
+                    className="disabled:bg-gray-50 cursor-pointer disabled:cursor-auto flex justify-between items-center p-3 md:pl-3.5 md:pr-4 md:py-2 text-blue-650 disabled:text-gray-400 border border-solid bordergray-120 rounded-lg shadow-pagination-btn active:shadow-none disabled:shadow-none"
                     onClick={onNext}>
                 <span className="hidden md:block mr-3 text-sm font-semibold">Next</span>
                 <AiOutlineArrowRight size="14" color={currentPage === lastPage ? '#9CA38F' : '#344054'}/>
