@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import logoDark from '../../assets/logo-dark.png';
+import Logo from '../Logo/Logo';
 
 const Footer = () => (
     <footer className="bg-blue-750 mt-[210px]">
@@ -23,9 +23,10 @@ const Footer = () => (
         <div className="mx-4 md:max-w-[1216px] xl-custom:mx-auto">
             <div className="md:flex md:justify-between md:items-start md:mb-16">
                 <div>
-                    <Link to="/" className="mb-8 md:mb-10 block">
-                        <img src={logoDark} alt="logo" className="max-w-[136px] max-h-[32px]"/>
-                    </Link>
+                    <Logo linkTo="/"
+                          title="Untitled UI"
+                          wrapClasses="mb-8 md:mb-10 block"
+                          themeDark={true}/>
                     <nav className="mb-12 md:mb-0">
                         {[['Home', '/'], ['Categories', 'categories'], ['Testlink', '/']].map(([title, url], index) => (
                             <Link
