@@ -3,6 +3,8 @@ import {AiOutlineClose, AiOutlineMenu} from 'react-icons/ai';
 import {Link} from 'react-router-dom';
 import logo from '../../assets/logo.png';
 
+const mainMenu = [['Home', '/'], ['Categories', 'categories'], ['Testlink', '/']];
+
 const Header = () => {
     const [isMenuShown, setIsMenuShown] = useState(false);
 
@@ -26,7 +28,7 @@ const Header = () => {
                         </Link>
                     </h1>
                     <nav className="hidden px-2 md:block">
-                        {[['Home', '/'], ['Categories', 'categories'], ['Testlink', '/']].map(([title, href], index) => (
+                        {mainMenu.map(([title, href], index) => (
                             <Link key={index} to={href}
                                   className="px-4 text-base text-gray-600 hover:text-gray-700 active:text-gray-700">{title}</Link>
                         ))}
@@ -34,7 +36,7 @@ const Header = () => {
                     <nav className={isMenuShown
                         ? "md:hidden transition-transform translate-x-0 absolute flex flex-col bg-gray-50 top-[100%] left-0 right-0 pb-3 z-10"
                         : "md:hidden transition-transform -translate-x-full absolute flex flex-col bg-gray-50 top-[100%] left-0 right-0 pb-3 z-10"}>
-                        {[['Home', '/'], ['Categories', 'categories'], ['Testlink', '/']].map(([title, href], index) => (
+                        {mainMenu.map(([title, href], index) => (
                             <Link key={index}
                                   to={href}
                                   onClick={hideMenuOnRouteChange}
