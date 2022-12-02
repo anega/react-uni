@@ -17,7 +17,6 @@ const Header = () => {
         setIsMenuShown(false);
     }
 
-    // TODO: hide mobile menu on route change
     return (
         <header className="bg-gray-50 border-solid border-b border-[#F2F4F7]">
             <div
