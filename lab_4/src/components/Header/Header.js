@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {AiOutlineClose, AiOutlineMenu} from 'react-icons/ai';
 import {Link} from 'react-router-dom';
 import logo from '../../assets/logo.png';
+import clsx from 'clsx';
 
 const mainMenu = [['Home', '/'], ['Categories', 'categories'], ['Testlink', '/']];
 
@@ -33,9 +34,8 @@ const Header = () => {
                                   className="px-4 text-base text-gray-600 hover:text-gray-700 active:text-gray-700">{title}</Link>
                         ))}
                     </nav>
-                    <nav className={isMenuShown
-                        ? "md:hidden transition-transform translate-x-0 absolute flex flex-col bg-gray-50 top-[100%] left-0 right-0 pb-3 z-10"
-                        : "md:hidden transition-transform -translate-x-full absolute flex flex-col bg-gray-50 top-[100%] left-0 right-0 pb-3 z-10"}>
+                    <nav
+                        className={clsx(isMenuShown && 'translate-x-0', !isMenuShown && '-translate-x-full', 'md:hidden', 'transition-transform', 'absolute', 'flex', 'flex-col', 'bg-gray-50', 'top-[100%]', 'left-0 right-0 pb-3 z-10')}>
                         {mainMenu.map(([title, href], index) => (
                             <Link key={index}
                                   to={href}
